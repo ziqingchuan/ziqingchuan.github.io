@@ -47,11 +47,10 @@ export default defineThemeConfig({
    */
   profile: {
     avatar: "/logo.svg",
-    name: "星光不问赶路人！",
-    description: "",
-    // circle: true,
-    // location: '',
-    // organization: '',
+    name: "睡个回笼觉~",
+    circle: true,
+    location: '浙江省 杭州市',
+    organization: 'Nanjing University',
   },
 
   navbar,

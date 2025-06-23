@@ -7,16 +7,17 @@
 import { defineNavbarConfig } from "vuepress-theme-plume";
 
 export default defineNavbarConfig([
-  { text: "首页", link: "/" },
-  { text: "博客", link: "/blog/" },
-  { text: "标签", link: "/blog/tags/" },
-  { text: "归档", link: "/blog/archives/" },
+  { text: "首页", link: "/", icon: "/icons/home.svg" },
+  { text: "博客", link: "/blog/", icon: "/icons/blog.svg" },
+  { text: "标签", link: "/blog/tags/", icon: "/icons/tag.svg" },
+  { text: "归档", link: "/blog/archives/", icon: "/icons/guidang.svg" },
   {
     text: "资源",
+    icon: "/icons/resource.svg",
     items: [
-      { text: "软件质量管理", link: "https://ziqingchuan.github.io/SQM/" },
-      { text: "软件系统设计", link: "https://ziqingchuan.github.io/SSD/" },
-      { text: "我的简历", link: "/我的简历/CurriculumVitae.md" },
+      { text: "软件质量管理", link: "https://ziqingchuan.github.io/SQM/", icon: "/icons/SQM.svg" },
+      { text: "软件系统设计", link: "https://ziqingchuan.github.io/SSD/", icon: "/icons/SSD.svg" },
+      { text: "我的简历", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
     ],
   },
 ]);

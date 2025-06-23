@@ -247,7 +247,7 @@ span {
         <div class="contact-item"><i>🌐</i>个人博客：try-catch.life</div>
       </div>
     </div>
-    <img src="/myself.png" class="profile-img" alt="个人照片" />
+    <img src="/images/myself.png" class="profile-img" alt="个人照片" />
   </div>
 
   <!-- 教育经历 -->
