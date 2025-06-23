@@ -244,7 +244,7 @@ span {
       </div>
       <div class="contact-info">
         <div class="contact-item"><i>👨‍💻</i>github：github.com/ziqingchuan</div>
-        <div class="contact-item"><i>🌐</i>个人博客：try-catch.life</div>
+        <div class="contact-item"><i>🌐</i>个人博客：https://www.try-catch.life</div>
       </div>
     </div>
     <img src="/images/myself.png" class="profile-img" alt="个人照片" />
@@ -255,7 +255,7 @@ span {
     <div class="section-title"><i>🎓</i>教育经历</div>
     <div class="item">
       <div class="item-header">
-        <div class="item-title">南京大学 985211双一流</div>
+        <div class="item-title">南京大学&nbsp <Badge text="985" type="tip"/><Badge text="211" type="warning"/><Badge text="双一流" type="danger"/></div>
         <div class="item-date">2022年06月 - 2026年07月</div>
       </div>
       <div class="item-subtitle">软件工程 本科 软件学院</div>
@@ -384,28 +384,28 @@ span {
       <div class="item" style="min-height: 300px">
         <div class="item-content">
           <p><strong>编程语言：</strong></p>
-          <div class="skills">
-            <span class="skill-tag">Typescript</span>
-            <span class="skill-tag">Javascript</span>
-            <span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">Vue3</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Arkts</span>
-          </div>
-          <p style="margin-top: 15px;"><strong>熟练工具：</strong></p>
-          <div class="skills">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Vite</span>
-            <span class="skill-tag">Vercel</span>
-            <span class="skill-tag">WebStorm</span>
-            <span class="skill-tag">PyCharm</span>
-            <span class="skill-tag">ChatGPT</span>
-            <span class="skill-tag">DeepSeek</span>
-            <span class="skill-tag">Manus</span>
-            <span class="skill-tag">Typora</span>
-          </div>
+              <div class="skills">
+              <Badge text="Typescript" type="tip"/>
+              <Badge text="Javascript" type="warning"/>
+              <Badge text="HTML/CSS" type="danger"/>
+              <Badge text="Vue3" type="tip"/>
+              <Badge text="C++" type="warning"/>
+              <Badge text="Python" type="danger"/>
+              <Badge text="Java" type="tip"/>
+              <Badge text="Arkts" type="warning"/>
+            </div>
+            <p style="margin-top: 15px;"><strong>熟练工具：</strong></p>
+            <div class="skills">
+              <Badge text="Git" type="danger"/>
+              <Badge text="Vite" type="tip"/>
+              <Badge text="Vercel" type="warning"/>
+              <Badge text="WebStorm" type="danger"/>
+              <Badge text="PyCharm" type="tip"/>
+              <Badge text="ChatGPT" type="warning"/>
+              <Badge text="DeepSeek" type="danger"/>
+              <Badge text="Manus" type="tip"/>
+              <Badge text="Typora" type="warning"/>
+            </div>
         </div>
       </div>
     </div>
