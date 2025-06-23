@@ -16,7 +16,7 @@ import { plumeTheme } from "vuepress-theme-plume";
 export default defineUserConfig({
   base: "/",
   lang: "zh-CN",
-  title: "睡个回笼觉~",
+  title: "404 Found",
 
   description: "睡个回笼觉的个人博客",
 
@@ -37,7 +37,7 @@ export default defineUserConfig({
 
   theme: plumeTheme({
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
-    // hostname: 'https://your_site_url',
+    hostname: 'https://try-catch.life',
 
     logo: "/logo.svg",
 

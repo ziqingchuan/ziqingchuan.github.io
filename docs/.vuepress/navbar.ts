@@ -11,8 +11,12 @@ export default defineNavbarConfig([
   { text: "博客", link: "/blog/" },
   { text: "标签", link: "/blog/tags/" },
   { text: "归档", link: "/blog/archives/" },
-  // {
-  //   text: "资源",
-  //   items: [{ text: "示例", link: "/notes/demo/README.md" }],
-  // },
+  {
+    text: "资源",
+    items: [
+      { text: "软件质量管理", link: "https://ziqingchuan.github.io/SQM/" },
+      { text: "软件系统设计", link: "https://ziqingchuan.github.io/SSD/" },
+      { text: "我的简历", link: "/我的简历/CurriculumVitae.md" },
+    ],
+  },
 ]);
