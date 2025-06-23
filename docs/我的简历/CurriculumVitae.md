@@ -381,7 +381,7 @@ span {
     <!-- 专业技能 -->
     <div class="section">
       <div class="section-title"><i>💻</i>专业技能</div>
-      <div class="item" style="height: 300px">
+      <div class="item" style="min-height: 300px">
         <div class="item-content">
           <p><strong>编程语言：</strong></p>
           <div class="skills">
@@ -412,7 +412,7 @@ span {
     <!-- 其他信息 -->
     <div class="section">
       <div class="section-title"><i>🌟</i>其他</div>
-      <div class="item" style="height: 300px">
+      <div class="item" style="min-height: 300px">
         <div class="item-content">
           <p>语言能力: 英语 CET-4、CET-6<br>
           熟悉并遵循RESTful API文档规范，能够独立编写高质量的技术文档，提升团队协作效率；<br>
