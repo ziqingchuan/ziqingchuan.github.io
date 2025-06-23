@@ -8,7 +8,7 @@ config:
     background: tint-plate
     hero:
       name: try-catch.life
-      tagline: Front-end engineering notebook
+
       text: Documenting solutions at the intersection of code and creativity
       actions:
         -

@@ -16,7 +16,7 @@ import { plumeTheme } from "vuepress-theme-plume";
 export default defineUserConfig({
   base: "/",
   lang: "zh-CN",
-  title: "404 Found",
+  title: "码不停蹄",
 
   description: "睡个回笼觉的个人博客",
 
