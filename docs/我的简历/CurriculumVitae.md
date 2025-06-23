@@ -8,6 +8,7 @@ permalink: /article/20jmp37t/
 ::: demo-wrapper title="我的简历" no-padding height="100%"
 <style scoped>
 .resume-container {
+  color: #000000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-height: 100%;
   overflow-y: auto;
@@ -15,6 +16,14 @@ permalink: /article/20jmp37t/
   background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  color: #000000;
+}
+
+span {
+  color: #000000;
 }
 
 .header {
@@ -41,6 +50,7 @@ permalink: /article/20jmp37t/
 
 .personal-info {
   flex: 1;
+  color: #000000;
   padding-left: 20px;
 }
 
@@ -52,6 +62,7 @@ permalink: /article/20jmp37t/
 }
 
 .contact-info {
+  color: #000000;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -71,6 +82,7 @@ permalink: /article/20jmp37t/
 }
 
 .basic-info {
+  color: #000000;
   display: flex;
   gap: 10px;
   font-size: 14px;
@@ -78,6 +90,7 @@ permalink: /article/20jmp37t/
 }
 
 .section {
+  color: #000000;
   margin-bottom: 25px;
 }
 
@@ -101,6 +114,7 @@ permalink: /article/20jmp37t/
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  color: #000000;
 }
 
 @media (max-width: 768px) {
@@ -110,6 +124,7 @@ permalink: /article/20jmp37t/
 }
 
 .item {
+  color: #000000;
   background: white;
   padding: 15px;
   border-radius: 8px;
@@ -124,6 +139,7 @@ permalink: /article/20jmp37t/
 }
 
 .item-header {
+  color: #000000;
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
@@ -173,6 +189,7 @@ permalink: /article/20jmp37t/
 
 .sar-item {
   margin-bottom: 10px;
+  color: #000000;
 }
 
 .sar-title {
@@ -185,6 +202,7 @@ permalink: /article/20jmp37t/
   padding-left: 15px;
   border-left: 2px solid #3498db;
   margin-left: 5px;
+  color: #000000;
 }
 
 .project-feature {
@@ -192,11 +210,13 @@ permalink: /article/20jmp37t/
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
+  color: #000000;
   border-left: 3px solid #3498db;
 }
 
 .responsibility {
   margin-top: 8px;
+  color: #000000;
 }
 
 @media print {
