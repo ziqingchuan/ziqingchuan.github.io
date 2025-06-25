@@ -258,8 +258,9 @@ span {
         <div class="item-title">南京大学&nbsp <Badge text="985" type="tip"/><Badge text="211" type="warning"/><Badge text="双一流" type="danger"/></div>
         <div class="item-date">2022年06月 - 2026年07月</div>
       </div>
-      <div class="item-subtitle">软件工程 本科 软件学院</div>
+      <div class="item-subtitle">专业：软件工程 &nbsp;&nbsp&nbsp;&nbsp 学历：本科 &nbsp;&nbsp&nbsp;&nbsp 院系：软件学院</div>
       <div class="item-content" style="margin-top: 5px;">比赛经历：华为Hackathon软件难题挑战赛  &nbsp;&nbsp 华为Codelabs校园挑战赛（二等奖） &nbsp;&nbsp 第十九届挑战杯"人工智能+"专项赛</div>
+<div class="item-content" style="margin-top: 5px;">校园经历：获评年度优秀团员 &nbsp&nbsp 获评优秀寝室长称号 &nbsp&nbsp 2023年"南星梦想计划"队长，组织黑龙江省的招生活动与线上宣讲会</div>
     </div>
   </div>
 
@@ -325,10 +326,11 @@ span {
   <div class="section">
     <div class="section-title"><i>🚀</i>项目经历</div>
     <div class="item">
-      <div class="item-header" style="flex-direction: column;">
+      <div class="item-header">
         <div class="item-title">《黑神话悟空游戏助手》——RAG应用</div>
-        <div class="item-subtitle" style="margin-top: 10px; margin-left: 5px">角色：前端开发组长</div>
+        <div class="item-date">2025年03月 - 2025年07月</div>
       </div>
+      <div class="item-subtitle">角色：前端开发组长</div>
       <div class="project-feature">
         <strong>项目功能：</strong>
         <p>
