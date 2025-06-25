@@ -1,11 +1,11 @@
 ---
-title: 浅谈js中的闭包
+title: 🐳浅谈js中的闭包
 createTime: 2025/06/25 16:41:37
 permalink: /article/eagyikza/
 tags:
   - JavaScript
   - 闭包
-excerpt: 从定义、特性、形成条件、作用、优缺点及应用场景等多个方面进行详细谈谈关于闭包。
+excerpt: 从定义、特性、形成条件、作用、优缺点及应用场景等多个方面谈谈闭包。
 
 ---
 ## 什么是闭包？

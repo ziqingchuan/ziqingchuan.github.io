@@ -1,5 +1,5 @@
 ---
-title: 浏览器输入 URL 到加载页面的过程
+title: 🐳浏览器输入 URL 到加载页面的过程
 createTime: 2025/06/24 15:06:25
 permalink: /article/wy4j7brl/
 tags:
