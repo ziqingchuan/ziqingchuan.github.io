@@ -4,7 +4,7 @@ tags:
   - HTTP
 createTime: 2025/06/23 16:09:40
 permalink: /article/bvxodc2w/
-excerpt: 本文对比了HTTP1、HTTP2和HTTP3三个版本的主要特性，重点分析了HTTP1的文本传输和性能瓶颈，HTTP2的二进制格式、多路复用和头部压缩改进，以及HTTP3基于QUIC协议在UDP传输、零RTT握手和解决队头阻塞方面的创新。
+excerpt: 本文从多个方向对比了HTTP1、HTTP2和HTTP3三个版本的主要特性。
 ---
 ## HTTP1
 - 使用==文本格式进行通信==，易于阅读但效率较低。

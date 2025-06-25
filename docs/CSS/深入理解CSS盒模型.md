@@ -5,7 +5,7 @@ tags:
   - 盒模型
 createTime: 2025/06/24 12:27:36
 permalink: /article/tnfwyeul/
-excerpt: 本文系统讲解了CSS盒模型的核心概念，详细解析了内容区、内边距、边框和外边距的作用，通过代码示例对比了标准盒模型和怪异盒模型的差异，并介绍了如何使用box-sizing属性控制盒模型的计算方式。
+excerpt: 详细介绍关于CSS盒模型的相关知识。
 ---
 ## 基本概念
 ::: tip 盒模型
