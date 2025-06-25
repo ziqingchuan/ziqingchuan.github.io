@@ -5,6 +5,7 @@ permalink: /article/q0qiywjp/
 tags:
   - CSS
   - 布局
+excerpt: 本文全面介绍了前端开发中常用的CSS布局技术，包括Flex弹性盒子、Grid网格系统、rem单位适配、视口单位、浮动布局、定位布局以及表格布局，通过代码示例和可视化演示展示了各种布局方式的特点和适用场景。
 ---
 ## Flex（弹性盒子）
 

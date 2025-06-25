@@ -5,6 +5,7 @@ permalink: /article/fi5n7bdc/
 tags:
   - HTTP
   - HTTPS
+excerpt: 本文详细对比了HTTP和HTTPS协议，阐述了HTTPS通过SSL/TLS加密实现安全传输的工作原理，分析了两者在安全性、性能、成本等方面的差异，并总结了HTTPS的优势与局限性，为网络通信安全提供了实用参考。
 ---
 
 ## 1. HTTP 和 HTTPS 的基本概念

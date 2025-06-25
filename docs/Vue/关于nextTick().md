@@ -5,6 +5,7 @@ permalink: /article/ncmrqjej/
 tags:
   - Vue
   - nextTick
+excerpt: 本文全面解析Vue.js的nextTick API，详细介绍了其四种典型应用场景，深入分析底层基于微任务/宏任务的实现机制，并提供使用注意事项，帮助开发者正确运用这一重要API优化Vue应用的DOM操作流程。
 ---
 ## 什么是 nextTick？
 

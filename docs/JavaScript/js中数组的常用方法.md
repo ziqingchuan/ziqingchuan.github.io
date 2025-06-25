@@ -5,6 +5,7 @@ permalink: /article/gkwazc48/
 tags:
   - JavaScript
   - 数组
+excerpt: 本文全面介绍了JavaScript数组的常用操作方法，包括join、push、pop等基础操作，以及forEach、map、filter等遍历方法，详细说明了每种方法的语法、功能和使用场景，帮助开发者高效处理数组数据。
 ---
 ## 操作数组
 ### **_1. `join`_** 

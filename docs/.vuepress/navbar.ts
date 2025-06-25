@@ -7,7 +7,6 @@
 import { defineNavbarConfig } from "vuepress-theme-plume";
 
 export default defineNavbarConfig([
-  { text: "首页", link: "/", icon: "/icons/home.svg" },
   { text: "博客", link: "/blog/", icon: "/icons/blog.svg" },
   { text: "标签", link: "/blog/tags/", icon: "/icons/tag.svg" },
   { text: "归档", link: "/blog/archives/", icon: "/icons/guidang.svg" },

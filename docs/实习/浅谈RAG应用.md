@@ -4,6 +4,7 @@ createTime: 2025/06/25 11:38:08
 permalink: /article/5fg41zwh/
 tags:
   - RAG
+excerpt: 本文介绍了RAG的核心概念、原理和常见实现模式，包括单次检索模式和循环检索模式。此外，RAG的特性使其能够动态更新知识、增强上下文理解，并具备良好的可扩展性，适用于多种任务场景。
 ---
 
 ::: tip RAG（Retrieval-Augmented Generation）
