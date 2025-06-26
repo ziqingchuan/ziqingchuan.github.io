@@ -20,3 +20,12 @@
 //     app.component('CustomComponent', CustomComponent)
 //   },
 // })
+// @ts-ignore
+import { defineClientConfig } from 'vuepress/client'
+import './theme/styles/custom.css'
+import Custom from './theme/components/Custom.vue'
+export default defineClientConfig({
+    enhance({ app }) {
+        app.component('Custom', Custom)
+    },
+})
