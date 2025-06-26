@@ -153,7 +153,7 @@ excerpt: 本文全面介绍了JavaScript数组的常用遍历与操作的方法�
   console.log(allSmallNumbers); // 输出: true
 ```
 
-### **_8. reduce`_**
+### **_8. `reduce`_**
 对数组中的==每个元素==执行一个reducer函数（升序执行），将其结果汇总为单个返回值。
 ```js
   let arr = [1, 2, 3, 4];
