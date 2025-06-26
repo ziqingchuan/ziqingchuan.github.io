@@ -2,30 +2,31 @@
   <div class="container">
     <canvas ref="canvasRef"></canvas>
     <div class="head-social">
-      <a href="https://github.com/ziqingchuan" target="_blank" class="head-social-btn">
-        <icon name="mdi:github"/>
-      </a>
-      <router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link>
-      <a href="mailto:221250108@smail.nju.edu.cn" target="_blank" class="head-social-btn">
-        <icon class="head-social-btn" name="ic:baseline-email"></icon>
-      </a>
+      <img style="width: 20px" src="/icons/right.svg" alt="right"><router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link><img style="width: 20px" src="/icons/left.svg" alt="left">
     </div>
     <div class="about-me">
-<!--      <div class="card-content grid-row-3-2">-->
+      <div class="card-content grid-row-3-2">
 <!--        <AboutMeName/>-->
 <!--        <AboutMeText>-->
 <!--          <template #motto>-->
 <!--            <slot name="motto">-->
 <!--              <p class="about-me-card-title-normal">座右铭</p>-->
-<!--              <p class="about-me-card-text-big">老师，</p>-->
-<!--              <p class="about-me-card-text-big about-me-card-text-color">我太想进步了。</p>-->
+<!--              <p class="about-me-card-text-big">&nbsp;&nbsp;&nbsp;&nbsp;莫听穿林打叶声，</p>-->
+<!--              <p class="about-me-card-text-big about-me-card-text-color">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;何妨吟啸且徐行！</p>-->
 <!--            </slot>-->
 <!--          </template>-->
 <!--        </AboutMeText>-->
-<!--      </div>-->
+      </div>
       <div class="card-content grid-row-3-2">
         <AboutMeSkill/>
-        <AboutMeLife/>
+        <AboutMeText>
+          <template #motto>
+            <slot name="motto">
+              <img src="/profile-night-rainbow.svg" alt="motto">
+            </slot>
+          </template>
+        </AboutMeText>
+<!--        <AboutMeLife/>-->
       </div>
       <div class="card-content grid-row-1-1">
         <AboutMeText>
@@ -69,7 +70,7 @@ canvas {
   align-items: center;
 
   .head-social-avatar {
-    margin: 30px;
+    margin: 10px;
     border-radius: 50%;
     width: 50px;
     overflow: hidden;
@@ -77,19 +78,6 @@ canvas {
 
     &:hover {
       transform: scale(1.1);
-    }
-  }
-
-  .head-social-btn {
-    cursor: pointer;
-    font-size: 30px;
-    margin: 0px;
-    transition: transform 0.2s, color 0.3s;
-    color: var(--vp-c-text-2);
-
-    &:hover {
-      color: var(--vp-c-brand-1);
-      transform: scale(1.2);
     }
   }
 }
@@ -129,6 +117,7 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
+import AboutMeName from "./AboutMeName.vue";
 
 interface Comet {
   direction: 'horizontal' | 'vertical'

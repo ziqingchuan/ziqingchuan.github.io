@@ -16,9 +16,9 @@ const chartRef = ref(null);
 
 // 示例数据
 const lifeData = [
-  { name: '工作', value: (250/1000).toFixed(2) },
-  { name: '游戏', value: (100/1000).toFixed(2) },
-  { name: '吉他', value: (150/1000).toFixed(2) },
+  { name: '工作', value: (350/1000).toFixed(2) },
+  { name: '游戏', value: (50/1000).toFixed(2) },
+  { name: '吉他', value: (100/1000).toFixed(2) },
   { name: '旅游', value: (150/1000).toFixed(2) },
   { name: '生活', value: (350/1000).toFixed(2) },
 ];

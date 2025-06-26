@@ -4,9 +4,8 @@
 
 <template>
   <div class="about-me-name">
-    <p>你好，很高兴认识你！👋</p>
-    <p class="about-me-card-text-big">你可以叫我 小川 </p>
-    <p>是一个敢想敢做的行动派！</p>
+    <p class="about-me-card-text-mid">欢迎来到：</p>
+    <p class="about-me-card-text-big" style="text-align: center">try-catch.life</p>
   </div>
 </template>
 

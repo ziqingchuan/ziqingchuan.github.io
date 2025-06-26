@@ -40,6 +40,15 @@
 }
 
 /*卡片文字 大号*/
+.about-me-card-text-mid{
+  color: var(--vp-c-text-1);
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/*卡片文字 大号*/
 .about-me-card-text-big{
   color: var(--vp-c-text-1);
   margin: 10px 0;
