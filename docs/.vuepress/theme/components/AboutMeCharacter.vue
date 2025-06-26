@@ -41,7 +41,7 @@
   transition: transform 1s;
   width: fit-content;
   min-height: 110px;
-  background-image: url("/images/ENFJ.png");
+  background-image: url("/images/enfj.svg");
   background-position: right bottom;
   background-size: contain;
   background-repeat: no-repeat;
