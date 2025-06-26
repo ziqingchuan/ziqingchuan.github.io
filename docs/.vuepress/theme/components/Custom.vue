@@ -5,7 +5,7 @@
       <a href="https://github.com/ziqingchuan" target="_blank" class="head-social-btn">
         <icon name="mdi:github"/>
       </a>
-      <router-link to="/blog/" class="head-social-avatar"><img src="/icons/enter.svg" alt="avatar"></router-link>
+      <router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link>
       <a href="mailto:221250108@smail.nju.edu.cn" target="_blank" class="head-social-btn">
         <icon class="head-social-btn" name="ic:baseline-email"></icon>
       </a>
@@ -69,7 +69,7 @@ canvas {
   align-items: center;
 
   .head-social-avatar {
-    margin: 10px;
+    margin: 30px;
     border-radius: 50%;
     width: 50px;
     overflow: hidden;
@@ -120,17 +120,11 @@ canvas {
   grid-template-columns: 1fr 1fr;
 }
 
-.grid-row-1 {
-  grid-template-columns: 1fr;
-}
-
-
 </style>
 
 
 <script setup lang="ts">
 import {ref, onMounted, onUnmounted} from 'vue'
-import AboutMeName from "./AboutMeName.vue";
 import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
@@ -145,7 +139,7 @@ interface Comet {
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const ctx = ref<CanvasRenderingContext2D | null>(null)
-const linesGap = 80
+const linesGap = 100
 const comets = ref<Comet[]>([])
 const mouseX = ref(-1)
 const mouseY = ref(-1)
@@ -174,7 +168,7 @@ const drawGrid = () => {
   if (!canvas || !context) return
 
   context.clearRect(0, 0, canvas.width, canvas.height)
-  context.lineWidth = 1
+  context.lineWidth = 2
 
   // 绘制带渐变效果的网格
   const radius = 100 // 颜色影响半径

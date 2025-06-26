@@ -32,10 +32,8 @@ import { ref } from 'vue';
 const technology = ref([
   { type: 'Vue', icon: 'logos:vue' },
   { type: 'Pinia', icon: 'logos:pinia' },
-  { type: '微信小程序', icon: 'tabler:brand-miniprogram' },
   { type: 'JavaScript', icon: 'vscode-icons:file-type-js' },
   { type: 'TypeScript', icon: 'vscode-icons:file-type-typescriptdef' },
-  { type: 'Less', icon: 'logos:less' },
   { type: 'CSS3', icon: 'logos:css-3' },
   { type: 'HTML5', icon: 'logos:html-5' },
   { type: 'Sass', icon:  'logos:sass' },
@@ -44,16 +42,11 @@ const technology = ref([
 // 工具
 const tools = ref([
   { type: 'WebStorm', icon: 'devicon:webstorm' },
-  { type: 'Pycharm', icon: 'devicon:pycharm' },
   { type: 'Git', icon: 'logos:git-icon' },
   { type: 'VSCode', icon: 'vscode-icons:file-type-vscode' },
-  { type: 'pnpm', icon: 'vscode-icons:file-type-light-pnpm' },
   { type: 'npm', icon: 'logos:npm' },
   { type: 'Vite', icon: 'devicon:vitejs' },
-  { type: 'IDEA', icon: 'logos:intellij-idea' },
   { type: 'Netlify', icon: 'devicon:netlify' },
-  { type: 'Netlify', icon: 'devicon:vercel' },
-  { type: 'GitHub', icon: 'logos:github' },
 ]);
 </script>
 
