@@ -21,6 +21,7 @@
 
     <div class="about-me-skill-detail">
       <span v-for="(item, index) in technology" :key="index"> <icon :name="item.icon" /> <span>{{item.type}}</span>  </span>
+      <span v-for="(item, index) in tools" :key="index"><icon :name="item.icon" /> <span>{{item.type}}</span> </span>
     </div>
   </div>
 </template>
@@ -30,23 +31,31 @@ import { ref } from 'vue';
 
 // 技能
 const technology = ref([
-  { type: 'Vue', icon: 'logos:vue' },
-  { type: 'Pinia', icon: 'logos:pinia' },
-  { type: 'JavaScript', icon: 'vscode-icons:file-type-js' },
-  { type: 'TypeScript', icon: 'vscode-icons:file-type-typescriptdef' },
-  { type: 'CSS3', icon: 'logos:css-3' },
-  { type: 'HTML5', icon: 'logos:html-5' },
-  { type: 'Sass', icon:  'logos:sass' },
+  // { type: 'Vue', icon: 'logos:vue' },
+  { type: 'Vue', icon: '/skills/Vue.svg' },
+  { type: 'Pinia', icon: '/skills/pinia.svg' },
+  { type: 'JavaScript', icon: '/skills/js.svg' },
+  { type: 'TypeScript', icon: '/skills/ts.svg' },
+  { type: 'CSS3', icon: '/skills/css.svg' },
+  { type: 'HTML5', icon: '/skills/html.svg' },
+  { type: 'Sass', icon:  '/skills/sass.svg' },
+  { type: 'Python', icon: '/skills/Python.svg' },
+  { type: 'Java', icon:  '/skills/java.svg' },
 ]);
 
 // 工具
 const tools = ref([
-  { type: 'WebStorm', icon: 'devicon:webstorm' },
-  { type: 'Git', icon: 'logos:git-icon' },
-  { type: 'VSCode', icon: 'vscode-icons:file-type-vscode' },
-  { type: 'npm', icon: 'logos:npm' },
-  { type: 'Vite', icon: 'devicon:vitejs' },
-  { type: 'Netlify', icon: 'devicon:netlify' },
+  { type: 'WebStorm', icon: '/skills/webstorm.svg' },
+  { type: 'Pycharm', icon: '/skills/Pycharm.svg' },
+  { type: 'IntelliJ IDEA', icon: '/skills/IDEA.svg' },
+  { type: 'Git', icon: '/skills/git.svg' },
+  { type: 'VSCode', icon: '/skills/vscode.svg' },
+  { type: 'npm', icon: '/skills/npm.svg' },
+  { type: 'Vite', icon: '/skills/vite.svg' },
+  { type: 'Vercel', icon: '/skills/vercel.svg' },
+  { type: 'Deepseek', icon: '/skills/deepseek.svg' },
+  { type: 'Coze', icon: '/skills/Coze.svg' },
+  { type: 'Manus', icon: '/skills/manus.svg' },
 ]);
 </script>
 
