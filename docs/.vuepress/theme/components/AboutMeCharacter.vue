@@ -8,7 +8,7 @@
   <div class="about-me-character-content">
     <div class="about-me-character-type">
       <p class="about-me-card-text-big about-me-card-text-color">&nbsp;&nbsp;&nbsp;&nbsp;主人公</p>
-      <p class="about-me-card-text-big">&nbsp;&nbsp;&nbsp;&nbsp;ENFJ</p>
+      <p class="about-me-card-text-big about-me-card-text-color">&nbsp;&nbsp;&nbsp;&nbsp;ENFJ</p>
     </div>
     <div class="about-me-character-img">
     </div>

@@ -33,9 +33,9 @@
           <template #motto>
             <slot name="motto">
               <p class="about-me-card-title-normal">追求</p>
-              <p class="about-me-card-text-big about-me-card-text-soft">&nbsp;&nbsp;&nbsp;&nbsp;和<span style="color: #3a5ccc">有意思的人</span>一起，
+              <p class="about-me-card-text-big">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;和<span style="color: #3a79cc">有趣的人</span>
               </p>
-              <p class="about-me-card-text-big">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;做<span style="color: #d53737">有意义的事</span></p>
+              <p class="about-me-card-text-big">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一起做<span style="color: #f84d4d">有意义的事</span></p>
             </slot>
           </template>
         </AboutMeText>
