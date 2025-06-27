@@ -1,8 +1,11 @@
 <template>
   <div class="container">
     <canvas ref="canvasRef"></canvas>
-    <div class="head-social">
-      <img style="width: 20px" src="/icons/right.svg" alt="right"><router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link><img style="width: 20px" src="/icons/left.svg" alt="left">
+    <div class="header">
+      <div class="head-social">
+        <img style="width: 20px" src="/icons/right.svg" alt="right"><router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link><img style="width: 20px" src="/icons/left.svg" alt="left">
+      </div>
+      <img src="/images/welcome.svg" alt="welcome">
     </div>
     <div class="about-me">
       <div class="card-content grid-row-3-2">
@@ -62,7 +65,12 @@ canvas {
   pointer-events: none; /* 允许鼠标事件穿透 */
   overflow: hidden;
 }
-
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .head-social {
   display: flex;
   width: fit-content;

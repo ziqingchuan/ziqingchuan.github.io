@@ -7,8 +7,8 @@
   <p class="about-me-card-title-normal">性格</p>
   <div class="about-me-character-content">
     <div class="about-me-character-type">
-      <p class="about-me-card-text-big about-me-card-text-color">&nbsp;&nbsp;&nbsp;&nbsp;主人公</p>
-      <p class="about-me-card-text-big about-me-card-text-color">&nbsp;&nbsp;&nbsp;&nbsp;ENFJ</p>
+      <p class="about-me-card-text-big about-me-card-text-color">主人公</p>
+      <p class="about-me-card-text-big about-me-card-text-color">ENFJ</p>
     </div>
     <div class="about-me-character-img">
     </div>
@@ -20,13 +20,12 @@
 <style scoped>
 .about-me-character{
   padding: 20px;
-  &:hover .about-me-character-img{
-    transform: scale(1.1);
-  }
 }
 
 .about-me-character-content{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .about-me-character-type{
