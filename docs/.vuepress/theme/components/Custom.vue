@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <canvas ref="canvasRef"></canvas>
+<!--    <canvas ref="canvasRef"></canvas>-->
     <div class="header">
       <div class="head-social">
         <img style="width: 20px" src="/icons/right.svg" alt="right"><router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link><img style="width: 20px" src="/icons/left.svg" alt="left">
@@ -126,169 +126,169 @@ import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
 import AboutMeName from "./AboutMeName.vue";
-
-interface Comet {
-  direction: 'horizontal' | 'vertical'
-  position: number
-  progress: number
-  speed: number
-}
-
-const canvasRef = ref<HTMLCanvasElement | null>(null)
-const ctx = ref<CanvasRenderingContext2D | null>(null)
-const linesGap = 100
-const comets = ref<Comet[]>([])
-const mouseX = ref(-1)
-const mouseY = ref(-1)
-let animationFrameId: number
-
-const initCanvas = () => {
-  const canvas = canvasRef.value
-  if (!canvas) return
-
-  ctx.value = canvas.getContext('2d')
-  resizeCanvas()
-  window.addEventListener('resize', resizeCanvas)
-}
-
-const resizeCanvas = () => {
-  const canvas = canvasRef.value
-  if (!canvas || !ctx.value) return
-
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
-}
-
-const drawGrid = () => {
-  const canvas = canvasRef.value
-  const context = ctx.value
-  if (!canvas || !context) return
-
-  context.clearRect(0, 0, canvas.width, canvas.height)
-  context.lineWidth = 2
-
-  // 绘制带渐变效果的网格
-  const radius = 100 // 颜色影响半径
-  const hasMouse = mouseX.value >= 0 && mouseY.value >= 0
-
-  // 水平线
-  for (let y = 0; y < canvas.height; y += linesGap) {
-    context.beginPath()
-    context.moveTo(0, y)
-    context.lineTo(canvas.width, y)
-
-    let alpha = 0.1
-    if (hasMouse) {
-      const dy = Math.abs(y - mouseY.value)
-      if (dy < radius) {
-        alpha = 0.1 + (1 - dy / radius) * 0.9
-      }
-    }
-    context.strokeStyle = `rgba(80, 134, 161, ${alpha})`
-    context.stroke()
-  }
-
-  // 垂直线
-  for (let x = 0; x < canvas.width; x += linesGap) {
-    context.beginPath()
-    context.moveTo(x, 0)
-    context.lineTo(x, canvas.height)
-
-    let alpha = 0.1
-    if (hasMouse) {
-      const dx = Math.abs(x - mouseX.value)
-      if (dx < radius) {
-        alpha = 0.1 + (1 - dx / radius) * 0.9
-      }
-    }
-    context.strokeStyle = `rgba(80, 134, 161, ${alpha})`
-    context.stroke()
-  }
-}
-
-// 彗星函数
-const createComet = () => {
-  const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical'
-  const maxPosition = direction === 'horizontal'
-      ? Math.floor(window.innerHeight / linesGap)
-      : Math.floor(window.innerWidth / linesGap)
-
-  const position = Math.floor(Math.random() * maxPosition) * linesGap
-
-  comets.value.push({
-    direction,
-    position,
-    progress: 0,
-    speed: Math.random() * 0.005 + 0.002,
-  })
-}
-
-const drawComet = (comet: Comet) => {
-  const context = ctx.value
-  const canvas = canvasRef.value
-  if (!context || !canvas) return
-
-  const length = 80
-  const {direction, position, progress} = comet
-
-  if (direction === 'horizontal') {
-    const x = progress * canvas.width
-    const y = position
-
-    const gradient = context.createLinearGradient(x - length, y, x, y)
-    gradient.addColorStop(0, 'rgba(80, 134, 161, 0)')
-    gradient.addColorStop(0.4, 'rgba(80,134,161,0.3)')
-    gradient.addColorStop(1, '#4483a2')
-
-    context.strokeStyle = gradient
-    context.beginPath()
-    context.moveTo(x - length, y)
-    context.lineTo(x, y)
-    context.stroke()
-  } else {
-    const x = position
-    const y = progress * canvas.height
-
-    const gradient = context.createLinearGradient(x, y - length, x, y)
-    gradient.addColorStop(0, 'rgba(80, 134, 161, 0)')
-    gradient.addColorStop(0.4, 'rgba(80,134,161,0.3)')
-    gradient.addColorStop(1, '#4483a2')
-
-    context.strokeStyle = gradient
-    context.beginPath()
-    context.moveTo(x, y - length)
-    context.lineTo(x, y)
-    context.stroke()
-  }
-}
-
-const animate = () => {
-  const canvas = canvasRef.value
-  const context = ctx.value
-  if (!canvas || !context) return
-
-  context.clearRect(0, 0, canvas.width, canvas.height)
-  drawGrid()
-
-  comets.value = comets.value.filter(comet => {
-    comet.progress += comet.speed
-    drawComet(comet)
-    return comet.progress < 1.2
-  })
-
-  animationFrameId = requestAnimationFrame(animate)
-}
-
-onMounted(() => {
-  initCanvas()
-  animate()
-  setInterval(createComet, 1000)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', resizeCanvas)
-  cancelAnimationFrame(animationFrameId)
-})
+//
+// interface Comet {
+//   direction: 'horizontal' | 'vertical'
+//   position: number
+//   progress: number
+//   speed: number
+// }
+//
+// const canvasRef = ref<HTMLCanvasElement | null>(null)
+// const ctx = ref<CanvasRenderingContext2D | null>(null)
+// const linesGap = 100
+// const comets = ref<Comet[]>([])
+// const mouseX = ref(-1)
+// const mouseY = ref(-1)
+// let animationFrameId: number
+//
+// const initCanvas = () => {
+//   const canvas = canvasRef.value
+//   if (!canvas) return
+//
+//   ctx.value = canvas.getContext('2d')
+//   resizeCanvas()
+//   window.addEventListener('resize', resizeCanvas)
+// }
+//
+// const resizeCanvas = () => {
+//   const canvas = canvasRef.value
+//   if (!canvas || !ctx.value) return
+//
+//   canvas.width = window.innerWidth
+//   canvas.height = window.innerHeight
+// }
+//
+// const drawGrid = () => {
+//   const canvas = canvasRef.value
+//   const context = ctx.value
+//   if (!canvas || !context) return
+//
+//   context.clearRect(0, 0, canvas.width, canvas.height)
+//   context.lineWidth = 2
+//
+//   // 绘制带渐变效果的网格
+//   const radius = 100 // 颜色影响半径
+//   const hasMouse = mouseX.value >= 0 && mouseY.value >= 0
+//
+//   // 水平线
+//   for (let y = 0; y < canvas.height; y += linesGap) {
+//     context.beginPath()
+//     context.moveTo(0, y)
+//     context.lineTo(canvas.width, y)
+//
+//     let alpha = 0.1
+//     if (hasMouse) {
+//       const dy = Math.abs(y - mouseY.value)
+//       if (dy < radius) {
+//         alpha = 0.1 + (1 - dy / radius) * 0.9
+//       }
+//     }
+//     context.strokeStyle = `rgba(80, 134, 161, ${alpha})`
+//     context.stroke()
+//   }
+//
+//   // 垂直线
+//   for (let x = 0; x < canvas.width; x += linesGap) {
+//     context.beginPath()
+//     context.moveTo(x, 0)
+//     context.lineTo(x, canvas.height)
+//
+//     let alpha = 0.1
+//     if (hasMouse) {
+//       const dx = Math.abs(x - mouseX.value)
+//       if (dx < radius) {
+//         alpha = 0.1 + (1 - dx / radius) * 0.9
+//       }
+//     }
+//     context.strokeStyle = `rgba(80, 134, 161, ${alpha})`
+//     context.stroke()
+//   }
+// }
+//
+// // 彗星函数
+// const createComet = () => {
+//   const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical'
+//   const maxPosition = direction === 'horizontal'
+//       ? Math.floor(window.innerHeight / linesGap)
+//       : Math.floor(window.innerWidth / linesGap)
+//
+//   const position = Math.floor(Math.random() * maxPosition) * linesGap
+//
+//   comets.value.push({
+//     direction,
+//     position,
+//     progress: 0,
+//     speed: Math.random() * 0.005 + 0.002,
+//   })
+// }
+//
+// const drawComet = (comet: Comet) => {
+//   const context = ctx.value
+//   const canvas = canvasRef.value
+//   if (!context || !canvas) return
+//
+//   const length = 80
+//   const {direction, position, progress} = comet
+//
+//   if (direction === 'horizontal') {
+//     const x = progress * canvas.width
+//     const y = position
+//
+//     const gradient = context.createLinearGradient(x - length, y, x, y)
+//     gradient.addColorStop(0, 'rgba(80, 134, 161, 0)')
+//     gradient.addColorStop(0.4, 'rgba(80,134,161,0.3)')
+//     gradient.addColorStop(1, '#4483a2')
+//
+//     context.strokeStyle = gradient
+//     context.beginPath()
+//     context.moveTo(x - length, y)
+//     context.lineTo(x, y)
+//     context.stroke()
+//   } else {
+//     const x = position
+//     const y = progress * canvas.height
+//
+//     const gradient = context.createLinearGradient(x, y - length, x, y)
+//     gradient.addColorStop(0, 'rgba(80, 134, 161, 0)')
+//     gradient.addColorStop(0.4, 'rgba(80,134,161,0.3)')
+//     gradient.addColorStop(1, '#4483a2')
+//
+//     context.strokeStyle = gradient
+//     context.beginPath()
+//     context.moveTo(x, y - length)
+//     context.lineTo(x, y)
+//     context.stroke()
+//   }
+// }
+//
+// const animate = () => {
+//   const canvas = canvasRef.value
+//   const context = ctx.value
+//   if (!canvas || !context) return
+//
+//   context.clearRect(0, 0, canvas.width, canvas.height)
+//   drawGrid()
+//
+//   comets.value = comets.value.filter(comet => {
+//     comet.progress += comet.speed
+//     drawComet(comet)
+//     return comet.progress < 1.2
+//   })
+//
+//   animationFrameId = requestAnimationFrame(animate)
+// }
+//
+// onMounted(() => {
+//   initCanvas()
+//   animate()
+//   setInterval(createComet, 1000)
+// })
+//
+// onUnmounted(() => {
+//   window.removeEventListener('resize', resizeCanvas)
+//   cancelAnimationFrame(animationFrameId)
+// })
 </script>
 
 
