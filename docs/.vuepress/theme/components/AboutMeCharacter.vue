@@ -30,6 +30,7 @@
 
 .about-me-character-type{
   width: fit-content;
+  text-align: center;
 }
 
 .about-me-character-img{
@@ -41,7 +42,7 @@
   width: fit-content;
   min-height: 110px;
   background-image: url("/images/enfj.svg");
-  background-position: right bottom;
+  background-position: right center;
   background-size: contain;
   background-repeat: no-repeat;
 }
