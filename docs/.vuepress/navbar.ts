@@ -17,7 +17,7 @@ export default defineNavbarConfig([
     items: [
       { text: "软件质量管理", link: "https://ziqingchuan.github.io/SQM/", icon: "/icons/SQM.svg" },
       { text: "软件系统设计", link: "https://ziqingchuan.github.io/SSD/", icon: "/icons/SSD.svg" },
-      { text: "web前端面试知识点", link: "https://vue3js.cn/interview/", icon: "/icons/other.svg" },
+      { text: "调色板小工具", link: "http://try-catch.life/colorful-board/", icon: "/icons/other.svg" },
       { text: "我的简历", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
     ],
   },
