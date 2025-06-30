@@ -12,13 +12,13 @@ export default defineNavbarConfig([
   { text: "分类", link: "/blog/categories/", icon: "/icons/butterfly.svg" },
   { text: "归档", link: "/blog/archives/", icon: "/icons/guidang.svg" },
   {
-    text: "资源",
+    text: "工具",
     icon: "/icons/resource.svg",
     items: [
-      { text: "软件质量管理", link: "https://ziqingchuan.github.io/SQM/", icon: "/icons/SQM.svg" },
-      { text: "软件系统设计", link: "https://ziqingchuan.github.io/SSD/", icon: "/icons/SSD.svg" },
-      { text: "调色板小工具", link: "http://try-catch.life/colorful-board/", icon: "/icons/other.svg" },
-      { text: "我的简历", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
+      { text: "SQM复习网站", link: "https://ziqingchuan.github.io/SQM/", icon: "/icons/SQM.svg" },
+      { text: "SSD复习网站", link: "https://ziqingchuan.github.io/SSD/", icon: "/icons/SSD.svg" },
+      { text: "mini调色板", link: "http://try-catch.life/colorful-board/", icon: "/icons/color-board.svg" },
     ],
   },
+  { text: "关于我", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
 ]);
