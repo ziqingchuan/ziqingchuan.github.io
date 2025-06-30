@@ -8,8 +8,10 @@
       <img src="/images/welcome.svg" alt="welcome">
     </div>
     <div class="about-me">
-      <img src="/profile-night-rainbow.svg">
-      <img src="/graph.svg">
+<!--      <div class="card-content grid-row-1-1" style="justify-content: center;align-items: center;">-->
+<!--        <img src="/profile-night-rainbow.svg">-->
+<!--        <img src="/graph.svg">-->
+<!--      </div>-->
 <!--        <AboutMeName/>-->
 <!--        <AboutMeText>-->
 <!--          <template #motto>-->
@@ -44,6 +46,24 @@
           </template>
         </AboutMeText>
         <AboutMeCharacter/>
+      </div>
+      <div class="card-content grid-row-2-4">
+<!--        <img src="/profile-night-rainbow.svg">-->
+        <AboutMeText>
+          <template #motto>
+            <slot name="motto">
+              <img src="/profile-night-rainbow.svg" alt="motto">
+            </slot>
+          </template>
+        </AboutMeText>
+<!--        <img src="/graph.svg">-->
+        <AboutMeText>
+          <template #motto>
+            <slot name="motto">
+              <img src="/graph.svg" alt="motto">
+            </slot>
+          </template>
+        </AboutMeText>
       </div>
     </div>
   </div>
@@ -108,6 +128,9 @@ canvas {
     display: flex;
     flex-direction: column;
   }
+}
+.grid-row-2-4 {
+  grid-template-columns: 2fr 4fr;
 }
 .grid-row-3-2 {
   grid-template-columns: 3fr 2fr;
