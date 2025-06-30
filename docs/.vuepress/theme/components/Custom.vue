@@ -8,7 +8,8 @@
       <img src="/images/welcome.svg" alt="welcome">
     </div>
     <div class="about-me">
-      <div class="card-content grid-row-3-2">
+      <img src="/profile-night-rainbow.svg">
+      <img src="/graph.svg">
 <!--        <AboutMeName/>-->
 <!--        <AboutMeText>-->
 <!--          <template #motto>-->
@@ -19,13 +20,13 @@
 <!--            </slot>-->
 <!--          </template>-->
 <!--        </AboutMeText>-->
-      </div>
+
       <div class="card-content grid-row-3-2">
         <AboutMeSkill/>
         <AboutMeText>
           <template #motto>
             <slot name="motto">
-              <img src="/profile-night-rainbow.svg" alt="motto">
+              <img src="/language.svg" alt="motto">
             </slot>
           </template>
         </AboutMeText>
