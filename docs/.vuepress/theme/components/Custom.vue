@@ -28,11 +28,45 @@
         <AboutMeText>
           <template #motto>
             <slot name="motto">
+              <p class="about-me-card-title-normal">编程语言</p>
               <img src="/language.svg" alt="motto">
             </slot>
           </template>
         </AboutMeText>
 <!--        <AboutMeLife/>-->
+      </div>
+<!--      <div class="card-content grid-row-1-1">-->
+<!--        <AboutMeText>-->
+<!--          <template #motto>-->
+<!--            <slot name="motto">-->
+<!--              <p class="about-me-card-title-normal">追求</p>-->
+<!--              <p class="about-me-card-text-big">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;和<span style="color: #3a79cc">有趣的人</span>-->
+<!--              </p>-->
+<!--              <p class="about-me-card-text-big">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一起做<span style="color: #f84d4d">有意义的事</span></p>-->
+<!--            </slot>-->
+<!--          </template>-->
+<!--        </AboutMeText>-->
+<!--        <AboutMeCharacter/>-->
+<!--      </div>-->
+      <div class="card-content grid-row-2-4">
+<!--        <img src="/profile-night-rainbow.svg">-->
+        <AboutMeText>
+          <template #motto>
+            <slot name="motto">
+              <p class="about-me-card-title-normal">GitHub</p>
+              <img src="/profile-night-rainbow.svg" alt="motto">
+            </slot>
+          </template>
+        </AboutMeText>
+<!--        <img src="/graph.svg">-->
+        <AboutMeText>
+          <template #motto>
+            <slot name="motto">
+              <p class="about-me-card-title-normal">Contribution Graph</p>
+              <img src="/graph.svg" alt="motto">
+            </slot>
+          </template>
+        </AboutMeText>
       </div>
       <div class="card-content grid-row-1-1">
         <AboutMeText>
@@ -46,24 +80,6 @@
           </template>
         </AboutMeText>
         <AboutMeCharacter/>
-      </div>
-      <div class="card-content grid-row-2-4">
-<!--        <img src="/profile-night-rainbow.svg">-->
-        <AboutMeText>
-          <template #motto>
-            <slot name="motto">
-              <img src="/profile-night-rainbow.svg" alt="motto">
-            </slot>
-          </template>
-        </AboutMeText>
-<!--        <img src="/graph.svg">-->
-        <AboutMeText>
-          <template #motto>
-            <slot name="motto">
-              <img src="/graph.svg" alt="motto">
-            </slot>
-          </template>
-        </AboutMeText>
       </div>
     </div>
   </div>
