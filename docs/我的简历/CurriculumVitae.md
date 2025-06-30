@@ -7,9 +7,7 @@ permalink: /article/20jmp37t/
 sticky: 2
 excerpt: 长风破浪会有时，直挂云帆济沧海！
 ---
-![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=ziqingchuan&theme=dracula)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ziqingchuan&layout=compact)
 ::: demo-wrapper title="我的简历" no-padding height="100%"
 <style scoped>
 .resume-container {
