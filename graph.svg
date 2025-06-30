@@ -155,7 +155,7 @@
     
             </style>
 
-            <foreignObject x="0" y="0" width="1200" height="50">
+            <foreignObject x="0" y="0" >
                 <h1 xmlns="http://www.w3.org/1999/xhtml" class="header">
                     My GitHub Contribution Graph
                 </h1>
