@@ -1,5 +1,5 @@
 ---
-title: 🐳浅谈js中的闭包
+title: 🟢浅谈js中的闭包
 createTime: 2025/06/25 16:41:37
 permalink: /article/eagyikza/
 tags:

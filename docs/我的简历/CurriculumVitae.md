@@ -1,5 +1,5 @@
 ---
-title: My CV
+title: ⚪My CV
 tags:
   - 简历
 createTime: 2025/06/23 11:01:46
@@ -7,7 +7,6 @@ permalink: /article/20jmp37t/
 sticky: 2
 excerpt: 长风破浪会有时，直挂云帆济沧海！
 ---
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ziqingchuan&layout=donut)
 ::: demo-wrapper title="我的简历" no-padding height="100%"
 <style scoped>
 .resume-container {
