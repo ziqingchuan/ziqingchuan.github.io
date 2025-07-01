@@ -1,5 +1,5 @@
 ---
-title: 🟣XSS攻击与CSRF攻击
+title: XSS攻击与CSRF攻击
 createTime: 2025/06/27 14:51:32
 permalink: /article/ugbjtill/
 tags:

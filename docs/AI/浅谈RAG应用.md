@@ -1,5 +1,5 @@
 ---
-title: 🔴浅谈RAG应用
+title: 浅谈RAG应用
 createTime: 2025/06/25 11:38:08
 permalink: /article/5fg41zwh/
 tags:

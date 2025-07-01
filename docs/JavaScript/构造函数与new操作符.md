@@ -1,5 +1,5 @@
 ---
-title: 🟢构造函数与new操作符
+title: 构造函数与new操作符
 createTime: 2025/06/30 21:44:31
 permalink: /article/du9l209l/
 tags: 

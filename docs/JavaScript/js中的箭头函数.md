@@ -1,5 +1,5 @@
 ---
-title: 🟢js中的箭头函数
+title: js中的箭头函数
 createTime: 2025/06/30 21:44:07
 permalink: /article/ywlfpyw1/
 tags: 

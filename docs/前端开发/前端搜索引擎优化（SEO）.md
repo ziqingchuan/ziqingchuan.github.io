@@ -1,5 +1,5 @@
 ---
-title: 🟣前端搜索引擎优化（SEO）
+title: 前端搜索引擎优化（SEO）
 createTime: 2025/06/30 21:33:51
 permalink: /article/kik9hmwk/
 tags: 

@@ -1,5 +1,5 @@
 ---
-title: ⚪My CV
+title: My CV
 tags:
   - 简历
 createTime: 2025/06/23 11:01:46

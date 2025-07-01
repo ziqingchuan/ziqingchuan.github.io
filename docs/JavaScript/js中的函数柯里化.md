@@ -1,5 +1,5 @@
 ---
-title: 🟢js中的函数柯里化
+title: js中的函数柯里化
 createTime: 2025/06/25 16:37:49
 permalink: /article/2se0q0vp/
 tags:

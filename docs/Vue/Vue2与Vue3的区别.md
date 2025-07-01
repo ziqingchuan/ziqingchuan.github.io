@@ -1,5 +1,5 @@
 ---
-title: 🔵Vue2与Vue3的区别
+title: Vue2与Vue3的区别
 createTime: 2025/06/30 21:32:17
 permalink: /article/f5d1n6ab/
 tags: 

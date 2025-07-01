@@ -1,5 +1,5 @@
 ---
-title: 🔵关于vue-router
+title: 关于vue-router
 createTime: 2025/06/30 21:45:07
 permalink: /article/v72tpktz/
 tags:
