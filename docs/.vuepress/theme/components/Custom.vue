@@ -10,14 +10,15 @@
 
       <div class="card-content grid-row-3-2">
         <AboutMeSkill/>
-        <AboutMeText>
-          <template #motto>
-            <slot name="motto">
-              <p class="about-me-card-title-normal">编程语言</p>
-              <img src="/language.svg" alt="motto">
-            </slot>
-          </template>
-        </AboutMeText>
+        <AboutMeLanguage/>
+<!--        <AboutMeText>-->
+<!--          <template #motto>-->
+<!--            <slot name="motto">-->
+<!--              <p class="about-me-card-title-normal">编程语言</p>-->
+<!--              <img src="/language.svg" alt="motto">-->
+<!--            </slot>-->
+<!--          </template>-->
+<!--        </AboutMeText>-->
       </div>
 
       <div class="card-content grid-row-2-4">
@@ -133,6 +134,7 @@ canvas {
 import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
+import AboutMeLanguage from "./AboutMeLanguage.vue";
 </script>
 
 
