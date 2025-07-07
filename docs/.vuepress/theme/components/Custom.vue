@@ -11,33 +11,11 @@
       <div class="card-content grid-row-3-2">
         <AboutMeSkill/>
         <AboutMeLanguage/>
-<!--        <AboutMeText>-->
-<!--          <template #motto>-->
-<!--            <slot name="motto">-->
-<!--              <p class="about-me-card-title-normal">编程语言</p>-->
-<!--              <img src="/language.svg" alt="motto">-->
-<!--            </slot>-->
-<!--          </template>-->
-<!--        </AboutMeText>-->
       </div>
 
-      <div class="card-content grid-row-2-4">
-        <AboutMeText>
-          <template #motto>
-            <slot name="motto">
-              <p class="about-me-card-title-normal">GitHub</p>
-              <img src="/profile-night-rainbow.svg" alt="motto">
-            </slot>
-          </template>
-        </AboutMeText>
-        <AboutMeText>
-          <template #motto>
-            <slot name="motto">
-              <p class="about-me-card-title-normal">Contribution Graph</p>
-              <img src="/graph.svg" alt="motto">
-            </slot>
-          </template>
-        </AboutMeText>
+      <div class="card-content grid-row-2-3">
+        <AboutMeAbility/>
+        <AboutMeContribution/>
       </div>
       <div class="card-content grid-row-1-1">
         <AboutMeText>
@@ -116,8 +94,8 @@ canvas {
     flex-direction: column;
   }
 }
-.grid-row-2-4 {
-  grid-template-columns: 2fr 4fr;
+.grid-row-2-3 {
+  grid-template-columns: 2fr 3fr;
 }
 .grid-row-3-2 {
   grid-template-columns: 3fr 2fr;
@@ -135,6 +113,8 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLanguage from "./AboutMeLanguage.vue";
+import AboutMeContribution from "./AboutMeContribution.vue";
+import AboutMeAbility from "./AboutMeAbility.vue";
 </script>
 
 

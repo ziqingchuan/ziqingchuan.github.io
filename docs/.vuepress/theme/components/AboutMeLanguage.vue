@@ -18,18 +18,18 @@ const langData = [
   { name: 'JavaScript', value: 71.65 },
   { name: 'HTML', value: 14.70 },
   { name: 'TypeScript', value: 9.45 },
-  { name: 'Css', value: 3.80 },
-  { name: 'GLSL', value: 0.41 },
+  { name: 'Css', value: 4.21 },
 ];
 onMounted(() => {
   const myChart = echarts.init(chartRef.value);
 
   const option = {
+    color: ['#efde59', '#e14b26', '#3177c4', '#653398'],
     tooltip: {
       trigger: 'item'
     },
     legend: {
-      top: '5%',
+      top: 0,
       left: 'center',
       textStyle: {
         fontSize: 12,
