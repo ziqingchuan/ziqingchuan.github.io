@@ -17,8 +17,9 @@ export default defineNavbarConfig([
     items: [
       { text: "SQM复习网站", link: "https://ziqingchuan.github.io/SQM/", icon: "/icons/SQM.svg" },
       { text: "SSD复习网站", link: "https://ziqingchuan.github.io/SSD/", icon: "/icons/SSD.svg" },
-      { text: "mini调色板", link: "http://try-catch.life/colorful-board/", icon: "/icons/color-board.svg" },
-      { text: "emoji大全", link: "http://try-catch.life/emoji-display/", icon: "/icons/emoji_loveface.svg" },
+      { text: "mini调色板", link: "https://try-catch.life/colorful-board/", icon: "/icons/color-board.svg" },
+      { text: "emoji大全", link: "https://try-catch.life/emoji-display/", icon: "/icons/emoji_loveface.svg" },
+      {text: "Echarts学习", link: "https://try-catch.life/echarts-demo/", icon: "/icons/chart-logo.svg"}
     ],
   },
   { text: "关于我", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
