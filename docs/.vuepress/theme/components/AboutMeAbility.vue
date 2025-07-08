@@ -23,7 +23,7 @@ onMounted(() => {
       splitNumber: 4, // 同心圆分割段数
       radius: '65%', // 雷达图大小
       axisName: {
-        color: '#666', // 指标文字颜色
+        color: '#999', // 指标文字颜色
         fontSize: 12,
         fontWeight: 'bold'
       },
@@ -83,7 +83,7 @@ onMounted(() => {
             label: {
               show: true,
               formatter: '{c}',
-              color: '#333'
+              color: '#999'
             }
           }
         ]
