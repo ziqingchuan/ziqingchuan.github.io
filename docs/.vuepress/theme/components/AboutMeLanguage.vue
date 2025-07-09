@@ -15,7 +15,8 @@ const chartRef = ref(null);
 
 // 示例数据
 const langData = [
-  { name: 'JavaScript', value: 71.65 },
+  { name: 'JavaScript', value: 41.32 },
+  { name: 'Vue', value: 30.33 },
   { name: 'HTML', value: 14.70 },
   { name: 'TypeScript', value: 9.45 },
   { name: 'Css', value: 4.21 },
@@ -24,7 +25,7 @@ onMounted(() => {
   const myChart = echarts.init(chartRef.value);
 
   const option = {
-    color: ['#efde59', '#e14b26', '#3177c4', '#653398'],
+    color: ['#efde59', '#2FD054', '#e14b26', '#3177c4', '#653398'],
     tooltip: {
       trigger: 'item'
     },
