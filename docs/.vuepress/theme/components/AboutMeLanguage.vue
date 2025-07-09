@@ -16,16 +16,16 @@ const chartRef = ref(null);
 // 示例数据
 const langData = [
   { name: 'JavaScript', value: 41.32 },
-  { name: 'Vue', value: 30.33 },
+  { name: 'TypeScript', value: 20.45 },
+  { name: 'Vue', value: 19.33 },
   { name: 'HTML', value: 14.70 },
-  { name: 'TypeScript', value: 9.45 },
   { name: 'Css', value: 4.21 },
 ];
 onMounted(() => {
   const myChart = echarts.init(chartRef.value);
 
   const option = {
-    color: ['#efde59', '#2FD054', '#e14b26', '#3177c4', '#653398'],
+    color: ['#f6ce66', '#2a71be', '#31a14b', '#d34826', '#653398'],
     tooltip: {
       trigger: 'item'
     },
@@ -43,10 +43,9 @@ onMounted(() => {
         type: 'pie',
         radius: ['40%', '70%'],
         avoidLabelOverlap: false,
+        padAngle: 3,
         itemStyle: {
-          borderRadius: 10,
-          borderColor: 'transparent',
-          borderWidth: 5
+          borderRadius: 5,
         },
         label: {
           show: false,
