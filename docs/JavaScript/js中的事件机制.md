@@ -8,281 +8,149 @@ tags:
 excerpt: JavaScript 事件系统深度解析：事件循环、事件委托与传播机制
 ---
 
-## 一、JavaScript 事件循环机制
+JavaScript 的事件系统是前端开发的核心基础，包括**事件循环机制**（控制代码执行顺序）和**事件传播机制**（控制交互事件的流动）。本文将用清晰的语言和图示，彻底讲透这两大机制的执行逻辑。
 
-### 1.1 单线程与异步编程模型
+## 一、JavaScript 事件循环：代码执行的"调度中心"
 
-==JavaScript 采用单线程执行模型，这意味着它一次只能处理一个任务==。为了不阻塞主线程，JavaScript 使用事件循环机制来处理异步操作：
+JavaScript 是单线程语言，一次只能执行一个任务。为了处理异步操作（如网络请求、定时器等），浏览器设计了**事件循环（Event Loop）** 机制来调度代码执行顺序。
+
+### 1.1 核心概念：任务队列与执行规则
+
+事件循环的核心是将任务分为两类，按优先级依次执行：
+
+- **宏任务（Macrotask）**：优先级较低的任务，包括
+    - 整体脚本代码（初始执行的代码）
+    - `setTimeout`/`setInterval` 回调
+    - DOM 事件回调（如点击、输入）
+    - I/O 操作（如网络请求、文件读取）
+
+- **微任务（Microtask）**：优先级较高的任务，包括
+    - `Promise.then`/`catch`/`finally` 回调
+    - `queueMicrotask` 注册的任务
+    - `MutationObserver`（DOM 变化监听）
+
+
+### 1.2 事件循环的执行流程
+
+事件循环按照"**先微后宏，一次一清**"的规则反复执行，具体步骤如下：
+
+1. **执行初始宏任务**：首先执行当前的宏任务（通常是整个脚本代码）。
+2. **清空微任务队列**：当前宏任务执行完毕后，立即执行所有微任务，直到微任务队列为空。
+3. **UI 渲染（可选）**：浏览器可能在此时进行页面渲染（非必选，由浏览器决定时机）。
+4. **循环执行**：从宏任务队列中取出下一个宏任务，重复步骤 1-3。
+
+#### 执行顺序图示
+```mermaid
+graph TD
+    A[开始] --> B[执行当前宏任务]
+    B --> C{微任务队列是否为空?}
+    C -->|否| D[执行一个微任务]
+    D --> C
+    C -->|是| E[可选: UI渲染]
+    E --> F{宏任务队列是否为空?}
+    F -->|否| B
+    F -->|是| G[等待新任务]
+    G --> B
+```
+
+
+### 1.3 经典执行顺序示例解析
+
+以下代码的输出顺序是理解事件循环的关键：
 
 ```javascript
-console.log('开始执行');
+console.log('1. 同步代码开始');
 
 setTimeout(() => {
-  console.log('定时器回调');
+  console.log('4. setTimeout宏任务');
 }, 0);
 
 Promise.resolve().then(() => {
-  console.log('Promise微任务');
+  console.log('3. Promise微任务');
 });
 
-console.log('执行结束');
-
-/* 
-执行结果输出顺序:
-   开始执行
-   执行结束
-   Promise微任务
-   定时器回调
-*/
+console.log('2. 同步代码结束');
 ```
 
-### 1.2 事件循环的核心组件
+**执行步骤拆解**：
+1. 执行同步代码（宏任务），输出 `1. 同步代码开始` 和 `2. 同步代码结束`。
+2. 当前宏任务执行完毕，检查微任务队列，发现 `Promise.then` 回调，执行并输出 `3. Promise微任务`。
+3. 微任务队列清空，从宏任务队列取出 `setTimeout` 回调，执行并输出 `4. setTimeout宏任务`。
 
-- **调用栈 (Call Stack)**：记录函数调用的栈结构，后进先出
-- **任务队列 (Task Queue)**：存放宏任务（setTimeout、I/O等）
-- **微任务队列 (Microtask Queue)**：存放微任务（Promise、MutationObserver）
-- **Web APIs 环境**：浏览器提供的异步API容器
+**输出顺序**：`1 → 2 → 3 → 4`
 
-### 1.3 事件循环执行流程详解
 
-1. 执行当前宏任务（通常是脚本代码）
-2. 执行所有微任务（直到微任务队列清空）
-3. 必要时进行UI渲染
-4. 从宏任务队列取出下一个任务执行
-5. 重复上述循环
+## 二、DOM 事件传播：交互事件的"流动路径"
 
-### 1.4 任务类型对比
+当用户点击按钮、输入文本等交互操作发生时，事件并非只在目标元素上触发，而是会经历一个**从外层到内层再回到外层**的传播过程，这就是事件传播机制。
 
-| 宏任务                | 微任务                  |
-|----------------------|------------------------|
-| setTimeout/setInterval | Promise.then/catch/finally |
-| DOM事件回调           | MutationObserver       |
-| I/O操作               | queueMicrotask         |
-| setImmediate(Node)    | process.nextTick(Node) |
+### 2.1 事件传播的三个阶段
 
-## 二、事件传播机制的三个阶段
+事件传播分为三个依次执行的阶段，如同"投石入水"的涟漪效应：
 
-### 2.1 捕获阶段
+1. **捕获阶段（Capture Phase）**
+    - 事件从最外层的 `window` 开始，**由外到内**向目标元素传播。
+    - 路径：`window → document → html → body → ... → 目标元素的父级`。
+    - 只有通过 `addEventListener(..., { capture: true })` 注册的监听器才会在这个阶段触发。
 
-==事件从最外层元素==（window/document）==向下传播到目标元素的父级==：
+2. **目标阶段（Target Phase）**
+    - 事件到达实际触发的目标元素本身。
+    - 无论是否设置捕获，目标元素上的所有监听器都会在此阶段触发（顺序由注册顺序决定）。
 
-```
-window → document → html → body → 父元素 → 目标元素
-```
+3. **冒泡阶段（Bubble Phase）**
+    - 事件从目标元素**由内到外**向最外层传播，与捕获阶段路径相反。
+    - 路径：`目标元素 → 父级 → ... → body → html → document → window`。
+    - 默认情况下（`addEventListener` 未设置 `capture`），监听器在此阶段触发。
 
-```javascript
-// 捕获阶段监听示例
-element.addEventListener('click', handler, true);
-// 或
-element.addEventListener('click', handler, {capture: true});
-```
-
-### 2.2 目标阶段
-
-事件到达目标元素本身。此时==无论是否设置了捕获，都会触发监听器==：
-
-```javascript
-// 目标元素的事件处理
-target.addEventListener('click', function(e) {
-  console.log('目标阶段触发:', e.eventPhase);
-});
+#### 传播阶段图示
+```mermaid
+graph TD
+    A[window] -->|捕获| B[document]
+    B -->|捕获| C[html]
+    C -->|捕获| D[body]
+    D -->|捕获| E[父元素]
+    E -->|捕获| F[目标元素]
+    F -->|目标阶段| F
+    F -->|冒泡| E
+    E -->|冒泡| D
+    D -->|冒泡| C
+    C -->|冒泡| B
+    B -->|冒泡| A
 ```
 
-### 2.3 冒泡阶段
 
-事件从目标元素向上传播回最外层元素：
+### 2.2 事件传播的控制方法
 
-```
-目标元素 → 父元素 → body → html → document → window
-```
+可以通过事件对象的方法控制传播流程：
 
-```javascript
-// 默认的冒泡阶段监听
-parentElement.addEventListener('click', function() {
-  console.log('冒泡阶段触发');
-});
-```
+- **`e.stopPropagation()`**：阻止事件继续传播到下一个阶段或元素（但当前元素的其他监听器仍会执行）。
+- **`e.stopImmediatePropagation()`**：立即阻止事件传播，且当前元素的其他监听器也不会执行。
+- **`e.preventDefault()`**：仅阻止事件的默认行为（如链接跳转、表单提交），不影响传播流程。
 
-### 2.4 完整传播流程示例
 
-```html
-<div id="grandparent">
-  <div id="parent">
-    <div id="child">点击我</div>
-  </div>
-</div>
+## 三、事件委托：高效利用事件传播
 
-<script>
-  const log = (id, phase) => console.log(`${id} ${phase}阶段`);
+事件委托是基于冒泡阶段的经典优化技巧，核心思想是"**父元素代理子元素的事件监听**"。
 
-  document.querySelectorAll('div').forEach(el => {
-    // 捕获阶段
-    el.addEventListener('click', () => log(el.id, '捕获'), true);
-    // 冒泡阶段
-    el.addEventListener('click', () => log(el.id, '冒泡'));
-  });
-</script>
+### 3.1 事件委托的原理
 
-/* 
-点击child元素后的输出:
-    grandparent 捕获阶段
-    parent 捕获阶段
-    child 捕获阶段
-    child 冒泡阶段
-    parent 冒泡阶段
-    grandparent 冒泡阶段
-*/
-```
+由于事件会冒泡到父元素，因此无需为每个子元素单独注册监听器，只需在父元素上注册一次，即可通过判断事件的目标元素（`e.target`）来处理所有子元素的事件。
 
-### 2.5 控制事件传播的方法
+#### 优势
+- **性能优化**：减少监听器数量（1 个父元素监听器替代 N 个子元素监听器）。
+- **动态兼容**：新增子元素无需重新注册监听器，自动继承事件处理。
 
-```javascript
-// 阻止事件继续传播
-function handleClick(e) {
-  e.stopPropagation();
-  console.log('事件传播到此为止');
-}
 
-// 立即阻止当前元素的其他监听器执行
-function handleClickImmediate(e) {
-  e.stopImmediatePropagation();
-  console.log('后续监听器不会执行');
-}
+## 四、总结：关键知识点梳理
 
-// 阻止默认行为但不影响传播
-function handleLinkClick(e) {
-  e.preventDefault();
-  console.log('链接不会跳转但事件继续传播');
-}
-```
+1. **事件循环**决定代码执行顺序：
+    - 先执行同步代码（宏任务），再清空所有微任务，最后执行下一个宏任务。
+    - 微任务优先级高于宏任务，同一轮循环中微任务会全部执行完毕。
 
-## 三、事件委托高级实践
+2. **事件传播**决定交互事件流动：
+    - 经历捕获（外→内）→ 目标（元素本身）→ 冒泡（内→外）三个阶段。
+    - 默认监听器在冒泡阶段触发，可通过 `capture: true` 改为捕获阶段。
 
-### 3.1 事件委托原理深度解析
-
-事件委托==利用事件冒泡机制==，在父元素上统一处理子元素事件：
-
-```javascript
-// 传统方式：为每个按钮添加监听器
-document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', handleClick);
-});
-
-// 事件委托：只需一个监听器
-document.getElementById('container').addEventListener('click', function(e) {
-  if (e.target.classList.contains('btn')) {
-    handleClick(e);
-  }
-});
-```
-
-### 3.2 动态内容处理优势
-
-```javascript
-// 动态添加的元素自动获得事件处理能力
-function addNewButton() {
-  const btn = document.createElement('button');
-  btn.className = 'btn';
-  btn.textContent = '新按钮';
-  document.getElementById('container').appendChild(btn);
-  // 无需单独添加事件监听
-}
-```
-
-### 3.3 复杂场景下的委托策略
-
-```javascript
-// 处理表格行中的多种元素
-document.querySelector('table').addEventListener('click', function(e) {
-  const row = e.target.closest('tr');
-  if (!row) return;
-  
-  if (e.target.matches('.edit-btn')) {
-    handleEdit(row.dataset.id);
-  } else if (e.target.matches('.delete-btn')) {
-    handleDelete(row.dataset.id);
-  } else if (e.target.matches('td:not(.actions)')) {
-    handleRowClick(row.dataset.id);
-  }
-});
-```
-
-### 3.4 性能对比测试
-
-```javascript
-// 创建1000个列表项
-const list = document.getElementById('list');
-for (let i = 0; i < 1000; i++) {
-  const item = document.createElement('li');
-  item.textContent = `项目 ${i}`;
-  list.appendChild(item);
-}
-
-// 传统方式内存占用
-function traditionalWay() {
-  const items = document.querySelectorAll('li');
-  items.forEach(item => {
-    item.addEventListener('click', () => {});
-  });
-  // 占用1000个监听器内存
-}
-
-// 事件委托方式
-function delegationWay() {
-  list.addEventListener('click', function(e) {
-    if (e.target.tagName === 'LI') {
-      // 处理点击
-    }
-  });
-  // 只占用1个监听器内存
-}
-```
-
-## 四、自定义事件系统
-
-### 4.1 创建和触发自定义事件
-
-```javascript
-// 创建带详细数据的事件
-const userLoginEvent = new CustomEvent('userLogin', {
-  detail: {
-    username: 'john_doe',
-    timestamp: Date.now()
-  },
-  bubbles: true,
-  cancelable: true
-});
-
-// 监听自定义事件
-document.addEventListener('userLogin', (e) => {
-  console.log(`用户登录: ${e.detail.username} at ${new Date(e.detail.timestamp)}`);
-});
-
-// 触发事件
-document.dispatchEvent(userLoginEvent);
-```
-
-### 4.2 组件间通信实践
-
-```javascript
-// 组件A：触发事件
-class ComponentA extends HTMLElement {
-  notify() {
-    this.dispatchEvent(new CustomEvent('dataReady', {
-      detail: { data: [1, 2, 3] },
-      composed: true  // 跨越Shadow DOM边界
-    }));
-  }
-}
-
-// 组件B：监听事件
-class ComponentB extends HTMLElement {
-  connectedCallback() {
-    document.addEventListener('dataReady', this.handleData);
-  }
-  
-  handleData = (e) => {
-    console.log('接收到数据:', e.detail.data);
-  };
-}
-```
+3. **实践技巧**：
+    - 用事件委托优化大量子元素的事件监听。
+    - 用 `stopPropagation` 控制事件传播范围，避免不必要的触发。

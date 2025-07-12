@@ -7,121 +7,181 @@ tags:
   - 生命周期
 excerpt: 还是只会用onMounted()吗？好好思考一下 Vue 的生命周期吧！
 ---
-## 什么是生命周期？
+Vue 3 的生命周期依然描述了组件从**创建到销毁**的完整过程，但在钩子函数的命名、组合式 API 中的使用方式上与 Vue 2 有显著差异。本文将聚焦 Vue 3 生命周期的核心概念、钩子函数及实际应用。
 
-Vue 的生命周期是指从 **创建一个 Vue 实例** 到 **实例被销毁** 的整个过程。在这个过程中，Vue 提供了多个生命周期钩子函数，开发者可以在这些函数中执行特定的逻辑，比如数据获取、DOM 操作、事件绑定等。
+## 一、Vue 3 生命周期的核心变化
+Vue 3 保留了 Vue 2 生命周期的核心思想，但在 API 设计上更贴合组合式 API（`setup` 语法），同时移除了部分冗余钩子，新增了更灵活的钩子函数。
 
-## Vue 生命周期的主要阶段
-
-### 1. **创建阶段**
-组件实例被创建，但尚未挂载到 DOM 上。在这个阶段，组件的响应式数据和事件监听器会被初始化，但还未涉及 DOM 的操作。
-
-#### 对应的生命周期钩子：
-- **`beforeCreate`**  
-  - 这是生命周期的第一个钩子函数，组件实例刚刚被初始化，数据和事件尚未设置。
-  - 在这个阶段访问 `data`、`props` 或 `methods` 都是==无效的=={.note}。
-
-- **`created`**  
-  - 响应式数据和事件监听器已经被初始化，但==组件还未挂载到 DOM=={.note}。
-  - 通常在这个阶段用于：
-  
-    <Badge text="初始化数据" type="tip"/>
-  
-    <Badge text="获取异步数据" type="warning"/>
-
-    <Badge text="设置定时器" type="danger"/>
-
-> 💡 **提示**：此阶段无法访问 DOM，因此不要在此阶段进行 DOM 操作。
-
-### 2. **挂载阶段**
-组件已经准备好挂载到 DOM 上，但还未完成实际的渲染。
-
-#### 对应的生命周期钩子：
-- **`beforeMount`**  
-  - 挂载动作即将开始，==模板已编译完成，但还未插入 DOM=={.note}。
-  - 此时仍无法访问真实的 DOM。
-
-- **`mounted`**  
-  - 组件已经挂载完成，DOM 已经生成，==可以在此阶段操作 DOM=={.note}。
-  - 常见用途：
-  
-    <Badge text="执行依赖 DOM 的操作" type="tip"/>
-
-    <Badge text="绑定第三方插件（如图表库）" type="warning"/>
+| **变化类型**       | **具体说明**                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| **API 风格调整**   | 组合式 API 中通过 `onXxx` 函数注册生命周期钩子（如 `onMounted`），替代 Vue 2 的选项式钩子。 |
+| **钩子名称变化**   | 移除 `beforeCreate` 和 `created`，统一由 `setup` 替代；其他钩子前缀统一为 `on`（如 `onMounted`）。 |
+| **新增钩子**       | 增加 `onRenderTracked`、`onRenderTriggered` 等用于调试的钩子。                  |
 
 
-> ⚠️ **注意**：虽然可以在 `mounted` 中操作 DOM，但最好避免复杂的业务逻辑，这可能导致性能问题。
+## 二、Vue 3 生命周期阶段与钩子函数
+Vue 3 的生命周期仍分为**创建、挂载、更新、卸载**四大阶段，每个阶段对应特定的钩子函数。以下是详细说明：
 
-### 3. **更新阶段**
-当组件的数据或属性发生变化时，组件会重新渲染并更新 DOM。
+### 1. 创建阶段：组件初始化
+组件实例被创建，响应式数据、方法等初始化完成。  
+**核心钩子：`setup`**
+- `setup` 是组合式 API 的入口函数，替代了 Vue 2 的 `beforeCreate` 和 `created`。
+- 执行时机：在组件实例初始化后、props 解析完成、数据和方法初始化前调用。
+- 用途：
+  - 初始化响应式数据（`ref`、`reactive`）。
+  - 定义方法、计算属性（`computed`）、监听器（`watch`）。
+  - 注册生命周期钩子（需在 `setup` 内调用 `onXxx` 函数）。
 
-#### 对应的生命周期钩子：
-- **`beforeUpdate`**  
-  - 数据发生变化，组件即将重新渲染。
-  - 此时，DOM 仍然是旧的状态。
-
-- **`updated`**  
-  - 组件完成重新渲染，DOM 已更新。
-  - 此时可以操作更新后的 DOM，但应避免在此钩子中再次触发状态改变，避免死循环。
-
-> ⚠️ **提示**：尽量避免频繁的 DOM 操作，并将逻辑分离到其他函数中。
-
-### 4. **销毁阶段**
-组件被销毁，实例中的所有绑定和事件监听器都会被移除。
-
-#### 对应的生命周期钩子：
-- **`beforeDestroy`**  
-  - 组件即将销毁，==实例仍然可用=={.note}。
-  - 常用操作：
-
-    <Badge text="清除定时器" type="danger"/>
-
-    <Badge text="解绑事件监听器" type="warning"/>
-
-- **`destroyed`**  
-  - 组件已经被销毁，所有资源和事件监听器都被清理。
-  - 此阶段无法访问组件实例的任何属性。
-
-## Vue 生命周期钩子函数总览
-
-以下是 Vue 生命周期钩子函数的顺序和作用：
-
-| 阶段             | 钩子函数        | 描述                                              |
-|------------------|----------------|--------------------------------------------------|
-| **创建阶段**      | `beforeCreate` | 实例初始化完成，尚未设置数据和事件。              |
-|                  | `created`      | 数据和事件已初始化，但未挂载 DOM。                |
-| **挂载阶段**      | `beforeMount`  | 模板已编译完成，尚未插入 DOM。                    |
-|                  | `mounted`      | DOM 已插入，可进行 DOM 操作。                     |
-| **更新阶段**      | `beforeUpdate` | 数据变化，组件即将重新渲染。                      |
-|                  | `updated`      | 组件完成重新渲染，DOM 已更新。                    |
-| **销毁阶段**      | `beforeDestroy`| 组件即将销毁，仍可访问实例。                      |
-|                  | `destroyed`    | 组件已销毁，绑定事件和资源已清理。                |
+```javascript
+// 示例：setup 中初始化数据并注册钩子
+import { ref, onMounted } from 'vue'
+setup() {
+  const count = ref(0) // 初始化响应式数据
+  onMounted(() => { // 注册挂载后钩子
+    console.log('组件已挂载')
+  })
+  return { count } // 暴露数据给模板
+}
+```
 
 
-## 生命周期的常见应用场景
+### 2. 挂载阶段：组件渲染到 DOM
+组件从模板编译到最终插入 DOM 的过程。  
+**核心钩子：**
+- **`onBeforeMount`**
+  - 执行时机：模板编译完成，但尚未挂载到 DOM 上。
+  - 特点：此时无法访问真实 DOM，模板仅存在于内存中。
 
-### 1. **数据获取**
-- **推荐阶段**：`created` 或 `mounted`  
-  在 `created` 中获取数据可以确保在挂载之前完成初始化，而在 `mounted` 中获取数据则可以确保组件已经渲染到页面。
+- **`onMounted`**
+  - 执行时机：组件已挂载到 DOM，真实 DOM 节点可用。
+  - 用途：
+    - 执行依赖 DOM 的操作（如获取元素尺寸、初始化第三方库）。
+    - 发起异步请求（如接口数据获取）。
+    - 绑定 DOM 事件（如滚动、resize 事件）。
 
-### 2. **DOM 操作**
-- **推荐阶段**：`mounted`  
-  在 `mounted` 中操作 DOM 是安全的，因为此时 DOM 已经完成挂载。
+```javascript
+import { onBeforeMount, onMounted } from 'vue'
+setup() {
+  onBeforeMount(() => {
+    console.log('即将挂载，DOM 未生成')
+  })
+  onMounted(() => {
+    console.log('已挂载，DOM 可用：', document.getElementById('app'))
+  })
+}
+```
 
-### 3. **事件监听**
-- **推荐阶段**：`mounted`（绑定）和 `beforeDestroy`（解绑）  
-  在组件销毁前解绑事件监听器以防止内存泄漏。
 
-### 4. **定时器清理**
-- **推荐阶段**：`beforeDestroy`  
-  在组件销毁前清理定时器，避免无效的任务占用资源。
+### 3. 更新阶段：数据变化触发重新渲染
+当组件的响应式数据变化时，触发视图更新的过程。  
+**核心钩子：**
+- **`onBeforeUpdate`**
+  - 执行时机：数据变化后，DOM 更新前调用。
+  - 用途：获取更新前的 DOM 状态（如旧数据对应的 DOM 结构）。
+
+- **`onUpdated`**
+  - 执行时机：DOM 已完成更新后调用。
+  - 用途：
+    - 操作更新后的 DOM（如滚动到最新位置）。
+    - 避免在此时修改数据，否则可能触发无限更新循环。
+
+```javascript
+import { ref, onBeforeUpdate, onUpdated } from 'vue'
+setup() {
+  const count = ref(0)
+  onBeforeUpdate(() => {
+    console.log('更新前的 count：', count.value) // 旧值
+  })
+  onUpdated(() => {
+    console.log('更新后的 count：', count.value) // 新值
+  })
+  return { count }
+}
+```
+
+
+### 4. 卸载阶段：组件从 DOM 中移除
+组件被销毁并清理资源的过程。  
+**核心钩子：**
+- **`onBeforeUnmount`**
+  - 执行时机：组件即将卸载，实例仍完全可用。
+  - 用途：
+    - 清理资源（如清除定时器、取消接口请求）。
+    - 解绑全局事件（如 `window.scroll`）。
+    - 销毁第三方库实例（如图表、地图）。
+
+- **`onUnmounted`**
+  - 执行时机：组件已完全卸载，DOM 节点被移除。
+  - 用途：确认资源已清理，执行卸载后的收尾操作（如日志记录）。
+
+```javascript
+import { onBeforeUnmount, onUnmounted } from 'vue'
+setup() {
+  const timer = setInterval(() => console.log('计时中'), 1000)
+  onBeforeUnmount(() => {
+    clearInterval(timer) // 清理定时器
+    console.log('组件即将卸载')
+  })
+  onUnmounted(() => {
+    console.log('组件已卸载，资源已清理')
+  })
+}
+```
+
+
+### 5. 其他特殊钩子
+- **`onErrorCaptured`**  
+  捕获子组件抛出的错误，返回 `false` 可阻止错误继续传播。
+  ```javascript
+  onErrorCaptured((err, instance, info) => {
+    console.log('捕获错误：', err, info)
+    return false // 阻止错误冒泡
+  })
+  ```
+
+- **调试钩子**
+  - `onRenderTracked`：跟踪渲染时依赖的收集情况（开发环境用）。
+  - `onRenderTriggered`：跟踪渲染触发的原因（开发环境用）。
+
+
+## 三、生命周期执行顺序示例
+以下是组件从创建到卸载的完整钩子执行顺序：
+1. setup（初始化数据和方法）
+2. onBeforeMount（模板编译完成，未挂载）
+3. onMounted（DOM 挂载完成）
+4. （数据变化）
+5. onBeforeUpdate（DOM 更新前）
+6. onUpdated（DOM 更新后）
+7. （组件卸载触发）
+8. onBeforeUnmount（即将卸载，清理资源）
+9. onUnmounted（完全卸载）
+
+
+
+## 四、Vue 2 与 Vue 3 生命周期对比
+| **Vue 2 选项式钩子** | **Vue 3 组合式钩子** | **说明**                     |
+|---------------------|---------------------|-----------------------------|
+| `beforeCreate`      | `setup`（替代）      | 组件初始化阶段                |
+| `created`           | `setup`（替代）      | 数据和方法初始化完成          |
+| `beforeMount`       | `onBeforeMount`     | 挂载前，模板编译完成          |
+| `mounted`           | `onMounted`         | 挂载完成，DOM 可用            |
+| `beforeUpdate`      | `onBeforeUpdate`    | 数据更新，DOM 未更新          |
+| `updated`           | `onUpdated`         | DOM 已更新                   |
+| `beforeDestroy`     | `onBeforeUnmount`   | 组件即将卸载，清理资源        |
+| `destroyed`         | `onUnmounted`       | 组件已卸载                   |
+
+
+## 五、常见应用场景
+1. **数据获取**：在 `onMounted` 中发起接口请求（确保 DOM 准备就绪）。
+2. **DOM 操作**：在 `onMounted` 中初始化依赖 DOM 的插件（如 ECharts）。
+3. **资源清理**：在 `onBeforeUnmount` 中清除定时器、解绑事件，避免内存泄漏。
+4. **错误处理**：用 `onErrorCaptured` 统一捕获子组件错误，提升用户体验。
+
 
 ## 总结
+Vue 3 生命周期通过组合式 API 的 `onXxx` 钩子函数，提供了更灵活的组件生命周期管理方式。核心是理解**创建、挂载、更新、卸载**四大阶段的钩子时机，合理利用钩子函数处理数据初始化、DOM 操作和资源清理，从而编写高效、可维护的 Vue 组件。
 
-Vue 的生命周期贯穿了组件的整个运行过程，从创建、挂载到更新和销毁。合理地利用生命周期钩子函数，可以帮助开发者更高效地编写业务逻辑，同时避免资源浪费和性能问题。
-
-### **关键点回顾**
-1. **创建阶段**：初始化数据和事件监听。
-2. **挂载阶段**：访问 DOM，执行依赖 DOM 的逻辑。
-3. **更新阶段**：响应数据变化，避免频繁的 DOM 操作。
-4. **销毁阶段**：清理资源，移除事件监听器和定时器。
+**关键点回顾**：
+- `setup` 替代了 Vue 2 的初始化钩子，是组合式 API 的入口。
+- 挂载后操作 DOM 用 `onMounted`，更新后操作 DOM 用 `onUpdated`。
+- 卸载前必须清理资源（定时器、事件），避免内存泄漏。
