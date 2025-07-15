@@ -19,7 +19,8 @@ export default defineNavbarConfig([
       { text: "SSD复习网站", link: "https://ziqingchuan.github.io/SSD/", icon: "/icons/SSD.svg" },
       { text: "mini调色板", link: "https://try-catch.life/colorful-board/", icon: "/icons/color-board.svg" },
       { text: "emoji大全", link: "https://try-catch.life/emoji-display/", icon: "/icons/emoji_loveface.svg" },
-      {text: "Echarts学习", link: "https://try-catch.life/echarts-demo/", icon: "/icons/chart-logo.svg"}
+      {text: "Echarts学习", link: "https://try-catch.life/echarts-demo/", icon: "/icons/chart-logo.svg"},
+      {text: "图片处理工具", link: "https://try-catch.life/img-tools/", icon: "/icons/img-tools-logo.svg"}
     ],
   },
   { text: "关于我", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
