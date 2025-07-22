@@ -24,7 +24,7 @@
     "docs:build": "vuepress build docs --clean-cache --clean-temp",
     "docs:preview": "http-server docs/.vuepress/dist",
     "vp-update": "pnpm dlx vp-update",
-    "deploy": "npm run docs:build && gh-pages -d docs/.vuepress/dist -b gh-pages"
+    "deploy": "npm run docs:build && gh-pages -d docs/.vuepress/dist"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.23",
