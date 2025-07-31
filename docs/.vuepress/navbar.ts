@@ -20,6 +20,7 @@ export default defineNavbarConfig([
       {text: "Echarts学习", link: "https://try-catch.life/echarts-demo/", icon: "/icons/chart-logo.svg"},
       {text: "图片处理工具", link: "https://try-catch.life/img-tools/", icon: "/icons/img-tools-logo.svg"},
       {text: "素笔 Mark 编辑器", link: "https://try-catch.life/markdown-editor/", icon: "/icons/markdown-editor-logo.svg"},
+      {text: "PDF转图片", link: "https://try-catch.life/pdf-to-picture/", icon: "/icons/pdf-logo.svg"},
     ],
   },
   { text: "关于我", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
