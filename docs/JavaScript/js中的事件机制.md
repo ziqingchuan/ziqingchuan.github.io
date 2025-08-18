@@ -79,6 +79,55 @@ console.log('2. 同步代码结束');
 
 **输出顺序**：`1 → 2 → 3 → 4`
 
+复杂一些的例子：
+
+```javascript
+async function async1() {
+    console.log('async1 start');
+    await async2();
+    console.log('async1 end');
+}
+
+async function async2() {
+    console.log('async2');
+}
+
+console.log('script start');
+
+setTimeout(function () {
+    console.log('setTimeout');
+}, 0);
+
+async1();
+
+new Promise(function (resolve) {
+    console.log('promise1');
+    resolve();
+}).then(function () {
+    console.log('promise2');
+});
+
+console.log('script end');
+```
+
+**执行步骤拆解**：
+1. 执行同步代码（宏任务）：
+    - 输出 'script start'
+    - 调用 async1()，输出 'async1 start'
+    - 执行 await async2()，输出 'async2'，将 async1 剩余代码放入微任务队列
+    - 执行 Promise 构造函数，输出 'promise1'，将 then 回调放入微任务队列
+    - 输出 'script end'
+
+2. 执行微任务队列：
+    - 执行 async1 剩余代码，输出 'async1 end'
+    - 执行 Promise then 回调，输出 'promise2'
+
+3. 执行宏任务队列：
+    - 执行 setTimeout 回调，输出 'setTimeout'
+
+**输出顺序**：
+
+`script start → async1 start → async2 → promise1 → script end → async1 end → promise2 → setTimeout`
 
 ## 二、DOM 事件传播：交互事件的"流动路径"
 
