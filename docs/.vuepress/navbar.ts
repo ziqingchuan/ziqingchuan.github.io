@@ -21,6 +21,7 @@ export default defineNavbarConfig([
       {text: "图片处理工具", link: "https://try-catch.life/img-tools/", icon: "/icons/img-tools-logo.svg"},
       {text: "素笔 Mark 编辑器", link: "https://try-catch.life/markdown-editor/", icon: "/icons/markdown-editor-logo.svg"},
       {text: "PDF转图片", link: "https://try-catch.life/pdf-to-picture/", icon: "/icons/pdf-logo.svg"},
+      {text: "Easy API", link: "https://www.easyapi.top/", icon: "/icons/easy-api.svg"},
     ],
   },
   { text: "关于我", link: "/我的简历/CurriculumVitae.md", icon: "/icons/heart.svg" },
