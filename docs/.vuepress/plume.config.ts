@@ -49,7 +49,7 @@ export default defineThemeConfig({
     avatar: "/logo.svg",
     name: "睡个回笼觉~",
     circle: true,
-    location: '浙江省 杭州市',
+    location: '中国 北京',
     organization: 'Nanjing University',
   },
 

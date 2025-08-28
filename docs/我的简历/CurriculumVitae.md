@@ -136,7 +136,6 @@ span {
 }
 
 .item:hover {
-  transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -242,7 +241,7 @@ span {
       <div class="contact-info" style="margin-top: 10px;">
         <div class="contact-item"><i>📱</i>电话：18245187102</div>
         <div class="contact-item"><i>✉️</i>邮箱：221250108@smail.nju.edu.cn</div>
-        <div class="contact-item"><i>📍</i>现居地：杭州</div>
+        <div class="contact-item"><i>📍</i>现居地：北京</div>
       </div>
       <div class="contact-info">
         <div class="contact-item"><i>👨‍💻</i>github：github.com/ziqingchuan</div>
@@ -271,11 +270,44 @@ span {
     <div class="section-title"><i>💼</i>实习经历</div>
     <div class="item">
       <div class="item-header">
-        <div class="item-title">科鲸（杭州）信息技术有限公司 / Datawhale</div>
+        <div class="item-title">北京世纪好未来教育科技有限公司（学而思）</div>
+        <div class="item-date">2025年08月 - 2025年10月</div>
+      </div>
+      <div class="item-subtitle">职位：前端开发初级工程师（境外大前端团队）</div>
+      <div class="sar-item" style="margin-top: 15px;">
+        <div class="sar-title">境外分校考试报告的B端与C端升级需求</div>
+        <div class="sar-content">
+          <p>参与境外分校的考试报告升级的工作，需要保留旧版本报告配置与C端报告的同时提供新版本的B/C端报告相关功能。</p>
+          <ul>
+            <li>主导负责B端配置表单的结构变更并与后端紧密配合进行接口联调</li>
+            <li>使用 Vue-I18n 进行多语言服务的配置工作；使用 AntDesign 组件库进行页面设计与开发</li>
+            <li>独立完成新版报告C端界面从0到1的开发，使用 Echarts 实现报告的图表展示</li>
+            <li>使用 jsPDF，jsZIP 库以及 Canvas API 实现B端打包下载考试报告压缩包的功能</li>
+            <li>使用 k8s 独立负责前端的测试环境/预发环境/正式环境的部署与上线工作</li>
+          </ul>
+          <p>最终新版考试报告成功0bug上线，支持了美国分校/英国分校的竞赛模考业务场景。</p>
+        </div>
+      </div>
+      <div class="sar-item">
+        <div class="sar-title">AI提效工具的探索与开发</div>
+        <div class="sar-content">
+          <p>负责提效工具的调研与开发尝试，来解决大量的简单题目的视频讲解工作与人力成本之间的矛盾；以及h5界面开发的提效工作。</p>
+          <ul>
+            <li>调研市面上文生视频与图生视频的产品并分析其缺陷，针对业务场景制定了可行的文生视频的技术方案</li>
+            <li>使用 Coze 搭建工作流并应用于前端场景搭建demo，使用 manim 的数学动画库实现了输入题目生成题目解析以及讲解视频的工具</li>
+            <li>分析了现有的figma2code插件的问题，制定了更高效的design2html的插件设计方案，并初步开发了 figma 插件，后续会负责集成大模型的工作</li>
+          </ul>
+          <p>通过制定可行的技术方案并进行开发尝试，最终期望能高效快速的生成讲解视频；设计导图转出的html代码能够有语义化的标签、有意义的类名以及能够兼顾SEO。</p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title">科鲸（杭州）信息技术有限公司（Datawhale AI学习社区）</div>
         <div class="item-date">2025年02月 - 2025年07月</div>
       </div>
-      <div class="item-subtitle">职位：前端开发工程师</div>
-      <div class="sar-item" style="margin-top: 5px;">
+      <div class="item-subtitle">职位：前端开发工程师（产品与研发部）</div>
+      <div class="sar-item" style="margin-top: 15px;">
         <div class="sar-title">考试管理系统核心功能开发与优化</div>
         <div class="sar-content">
           <p>负责后台考试管理模块的核心功能开发，需实现富文本题目编辑、良好交互体验并确保数据安全，同时为未来题型扩展奠定基础。</p>
@@ -308,39 +340,6 @@ span {
             <li>使用Compressor库，设计并实施基于 Canvas API 的客户端图片预压缩方案，在图片上传前进行自动化处理</li>
           </ul>
           <p>优化后，平台存储的图片体积平均减少 80% 以上，显著降低了云存储成本，提升了资源利用效率。</p>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-header">
-        <div class="item-title">北京世纪好未来教育科技有限公司</div>
-        <div class="item-date">2025年08月 - 2025年10月</div>
-      </div>
-      <div class="item-subtitle">职位：前端开发初级工程师</div>
-      <div class="sar-item" style="margin-top: 5px;">
-        <div class="sar-title">境外分校考试报告的B端与C端升级需求</div>
-        <div class="sar-content">
-          <p>参与境外分校的考试报告升级的工作，需要保留旧版本报告配置与C端报告的同时提供新版本的B/C端报告相关功能。</p>
-          <ul>
-            <li>主导负责B端配置表单的结构变更并与后端紧密配合进行接口联调</li>
-            <li>使用 Vue-I18n 进行多语言服务的配置工作；使用 AntDesign 组件库进行页面设计与开发</li>
-            <li>独立完成新版报告C端界面从0到1的开发，使用 Echarts 实现报告的图表展示</li>
-            <li>使用 jsPDF，jsZIP 库以及 Canvas API 实现B端打包下载考试报告压缩包的功能</li>
-            <li>使用 k8s 独立负责前端的测试环境/预发环境/正式环境的部署与上线工作</li>
-          </ul>
-          <p>最终新版考试报告成功0bug上线，支持了美国分校/英国分校的竞赛模考业务场景。</p>
-        </div>
-      </div>
-      <div class="sar-item">
-        <div class="sar-title">AI提效工具的探索与开发</div>
-        <div class="sar-content">
-          <p>负责提效工具的调研与开发尝试，来解决大量的简单题目的视频讲解工作与人力成本之间的矛盾；以及h5界面开发的提效工作。</p>
-          <ul>
-            <li>调研市面上文生视频与图生视频的产品并分析其缺陷，针对业务场景制定了可行的文生视频的技术方案</li>
-            <li>使用 Coze 搭建工作流并应用于前端场景搭建demo，使用 manim 的数学动画库实现了输入题目生成题目解析以及讲解视频的工具</li>
-            <li>分析了现有的figma2code插件的问题，制定了更高效的design2html的插件设计方案，并初步开发了 figma 插件，后续会负责集成大模型的工作</li>
-          </ul>
-          <p>通过制定可行的技术方案并进行开发尝试，最终期望能高效快速的生成讲解视频；设计导图转出的html代码能够有语义化的标签、有意义的类名以及能够兼顾SEO。</p>
         </div>
       </div>
     </div>
