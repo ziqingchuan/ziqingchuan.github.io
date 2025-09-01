@@ -17,6 +17,9 @@ excerpt: HTTP与HTTPS都是什么？又有什么区别呢？
 
 - HTTP 的特点是**明文传输**，即数据在网络中以未加密的形式传输，这使得数据容易被窃取或篡改。
 :::
+
+http1/2/3的区别：[点击查看](/HTTP/http1,http2,http3的区别.md)
+
 ### HTTPS
 ::: tip 定义
 **HTTPS**（Hypertext Transfer Protocol Secure，超文本传输协议安全版）是在 HTTP 基础上加入了 SSL/TLS 加密层的协议，目的是为网络通信提供安全保障。
