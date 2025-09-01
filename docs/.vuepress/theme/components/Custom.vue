@@ -15,7 +15,7 @@
 
       <div class="card-content grid-row-2-3">
         <AboutMeAbility/>
-        <AboutMeContribution/>
+        <AboutMeKeyWord/>
       </div>
       <div class="card-content grid-row-1-1">
         <AboutMeText>
@@ -113,7 +113,7 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLanguage from "./AboutMeLanguage.vue";
-import AboutMeContribution from "./AboutMeContribution.vue";
+import AboutMeKeyWord from "./AboutMeKeyWord.vue";
 import AboutMeAbility from "./AboutMeAbility.vue";
 </script>
 
