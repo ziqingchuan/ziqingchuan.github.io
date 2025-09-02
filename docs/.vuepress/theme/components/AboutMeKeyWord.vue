@@ -21,6 +21,7 @@ let resizeHandler = null;
 
 // 1. 词云数据（text: 关键词，value: 权重，link: 跳转链接）
 const wordData = [
+  { text: '计算机网络', value: 3 },
   { text: 'LangChain', value: 1 },
   { text: 'AI', value: 2 },
   { text: 'Vue', value: 7 },
@@ -69,6 +70,7 @@ const wordData = [
   { text: '代理', value: 1 },
   { text: 'nextTick', value: 1 },
   { text: 'CSS', value: 3 },
+  { text: '动画', value: 3 },
   { text: '布局', value: 2 },
   { text: '双向绑定', value: 1 },
   { text: '重绘&重排', value: 1 },
