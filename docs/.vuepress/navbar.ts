@@ -8,12 +8,12 @@ import { defineNavbarConfig } from "vuepress-theme-plume";
 
 export default defineNavbarConfig([
   { text: "博客", link: "/blog/", icon: "/icons/blog.svg" },
-  { text: "标签", link: "/blog/tags/", icon: "/icons/tag.svg" },
-  { text: "分类", link: "/blog/categories/", icon: "/icons/butterfly.svg" },
-  { text: "归档", link: "/blog/archives/", icon: "/icons/guidang.svg" },
+  { text: "标签", link: "/blog/tags/", icon: "/icons/blog.svg" },
+  { text: "分类", link: "/blog/categories/", icon: "/icons/blog.svg" },
+  { text: "归档", link: "/blog/archives/", icon: "/icons/blog.svg" },
   {
     text: "工具",
-    icon: "/icons/resource.svg",
+    icon: "/icons/blog.svg",
     items: [
       { text: "mini调色板", link: "https://try-catch.life/colorful-board/", icon: "/icons/color-board.svg" },
       { text: "emoji大全", link: "https://try-catch.life/emoji-display/", icon: "/icons/emoji_loveface.svg" },
@@ -24,5 +24,5 @@ export default defineNavbarConfig([
       {text: "Easy API", link: "https://www.easyapi.top/", icon: "/icons/easy-api.svg"},
     ],
   },
-  { text: "关于我", link: "/我的简历/MyCV.md", icon: "/icons/heart.svg" },
+  { text: "关于我", link: "/我的简历/MyCV.md", icon: "/icons/blog.svg" },
 ]);
