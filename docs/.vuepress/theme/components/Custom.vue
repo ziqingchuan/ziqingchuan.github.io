@@ -2,7 +2,9 @@
   <div class="container">
     <div class="header">
       <div class="head-social">
-        <img style="width: 20px" src="/icons/right.svg" alt="right"><router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link><img style="width: 20px" src="/icons/left.svg" alt="left">
+<!--        <img style="width: 20px" src="/icons/right.svg" alt="right">-->
+        <router-link to="/blog/" class="head-social-avatar"><img src="/logo.svg" alt="avatar"></router-link>
+<!--        <img style="width: 20px" src="/icons/left.svg" alt="left">-->
       </div>
       <img src="/images/welcome.svg" alt="welcome">
     </div>
