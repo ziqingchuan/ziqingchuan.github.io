@@ -88,7 +88,8 @@ const wordData = [
   { text: '简历', value: 1 },
   { text: '组件传参', value: 1 },
   { text: 'markdown', value: 1 },
-  { text: '教程', value: 1 }
+  { text: '教程', value: 1 },
+  { text: 'WebSocket', value:2 }
 ];
 
 // 2. 初始化词云
@@ -153,10 +154,18 @@ const renderWordCloud = (words, svgElement, width, height) => {
       .style('cursor', 'pointer') // 鼠标悬停显示指针
       // 完全随机颜色（RGB 0-255）
       .style('fill', () => {
-        const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 255);
-        const b = Math.floor(Math.random() * 255);
-        return `rgb(${r}, ${g}, ${b})`;
+        // 定义红橙黄绿青蓝紫七种颜色的固定值
+        const rainbowColors = [
+            'rgba(255,0,0,0.76)',
+          '#ff9d3c',
+          'rgba(207,207,0,0.93)',
+          'rgba(54,209,54,0.87)',
+          '#00c4ff',
+          'rgb(52,115,255)',
+          'rgba(181,82,255,0.89)'];
+        // 随机选择其中一种颜色
+        const color = rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
+        return color;
       })
       // 鼠标悬浮效果（加粗）
       .on('mouseover', function() {
