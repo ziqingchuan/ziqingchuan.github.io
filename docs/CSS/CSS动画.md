@@ -215,10 +215,8 @@ CSS动画主要通过两大技术实现：**过渡动画（Transition）** 和**
 /* CSS */
 .banner-container {
    position: relative;
-   width: 600px;
    height: 200px;
    overflow: hidden;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .banner {
    position: absolute;
@@ -270,10 +268,8 @@ CSS动画主要通过两大技术实现：**过渡动画（Transition）** 和**
 <style scoped>
 .banner-container {
     position: relative;
-    width: 600px;
     height: 200px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .banner {
     position: absolute;
@@ -363,7 +359,38 @@ function toggleAnimation() {
     box.style.animationPlayState === 'paused' ? 'running' : 'paused';
 }
 ```
+::: demo-wrapper title="效果" padding="20px" height="100%"
+<style scoped>
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #409eff;
+  animation: move 3s linear infinite alternate;
+  animation-play-state: running; /* 确保动画初始为运行状态 */
+}
+@keyframes move {
+  from { transform: translateX(0); }
+  to { transform: translateX(300px); }
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #409eff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+<div class="box"></div>
+<button class="btn" onclick="
+  const box = document.querySelector('.box');
+  box.style.animationPlayState = 
+    box.style.animationPlayState === 'paused' ? 'running' : 'paused';
+">暂停/播放</button>
 
+:::
 
 ## 四、核心属性：Transform—— 动画的“变形”基础
 无论是Transition还是Animation，都离不开`transform`属性——它用于实现元素的平移、旋转、缩放、倾斜等变形，且不会影响其他元素的布局（不会触发重排），性能极佳。
