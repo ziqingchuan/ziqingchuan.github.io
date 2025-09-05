@@ -89,7 +89,8 @@ const wordData = [
   { text: '组件传参', value: 1 },
   { text: 'markdown', value: 1 },
   { text: '教程', value: 1 },
-  { text: 'WebSocket', value:2 }
+  { text: 'WebSocket', value:2 },
+  { text: '编译', value: 1 },
 ];
 
 // 2. 初始化词云
