@@ -25,7 +25,12 @@ onMounted(() => {
   const myChart = echarts.init(chartRef.value);
 
   const option = {
-    color: ['#f6ce66', '#2a71be', '#31a14b', '#d34826', '#653398'],
+    color: [
+        'rgba(255,234,0,0.88)',
+      '#2a71be',
+      '#31a14b',
+      '#d34826',
+      '#653398'],
     tooltip: {
       trigger: 'item'
     },
@@ -43,9 +48,9 @@ onMounted(() => {
         type: 'pie',
         radius: ['40%', '70%'],
         avoidLabelOverlap: false,
-        padAngle: 3,
+        padAngle: 1,
         itemStyle: {
-          borderRadius: 5,
+          borderRadius: 3,
         },
         label: {
           show: false,
