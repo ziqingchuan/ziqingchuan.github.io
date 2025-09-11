@@ -19,7 +19,7 @@ export default defineNavbarConfig([
       { text: "emoji大全", link: "https://try-catch.life/emoji-display/", icon: "/icons/emoji_loveface.svg" },
       {text: "Echarts学习", link: "https://try-catch.life/echarts-demo/", icon: "/icons/chart-logo.svg"},
       {text: "图片处理工具", link: "https://try-catch.life/img-tools/", icon: "/icons/img-tools-logo.svg"},
-      {text: "素笔 Mark 编辑器", link: "https://marklite.surge.sh/", icon: "/icons/markdown-editor-logo.svg"},
+      {text: "素笔 Mark 编辑器", link: "https://marklite.cn/", icon: "/icons/markdown-editor-logo.svg"},
       {text: "PDF转图片", link: "https://try-catch.life/pdf-to-picture/", icon: "/icons/pdf-logo.svg"},
       {text: "Easy API", link: "https://www.easyapi.top/", icon: "/icons/easy-api.svg"},
     ],

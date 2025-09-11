@@ -38,7 +38,7 @@ export default defineThemeConfig({
 
   /* 站点页脚 */
   footer: {
-    message: '由 <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> 提供技术支持，主题来自 <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a>',
+    message: '',
     copyright: '© 2025  try-catch.life',
   },
 
