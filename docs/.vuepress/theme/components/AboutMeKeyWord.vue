@@ -24,6 +24,7 @@ const wordData = [
   { text: '计算机网络', value: 3 },
   { text: 'LangChain', value: 1 },
   { text: 'AI', value: 2 },
+  { text: 'MCP', value: 2 },
   { text: 'Vue', value: 7 },
   { text: 'React', value: 1 },
   { text: '实习', value: 2 },
