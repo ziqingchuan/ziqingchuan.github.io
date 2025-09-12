@@ -1,17 +1,17 @@
 ---
-title: SaSS
+title: Sass
 createTime: 2025/09/12 10:57:42
 permalink: /article/cswikea1/
 tags:
   - CSS
   - SaSS
-excerpt: 详细介绍SaSS的相关用法。
+excerpt: 详细介绍Sass的相关用法。
 ---
 # Sass 全面指南：现代CSS预处理器的核心概念与实战
 
 ## 什么是Sass？
 
-:::tip SaSS
+:::tip Sass
 Sass（Syntactically Awesome Style Sheets）是一款成熟的CSS预处理器，它扩展了CSS语言，增加了变量、嵌套、混合（mixin）、函数等特性，让CSS编写更高效、更易维护。Sass有两种语法格式：
 - SCSS（Sassy CSS） - 使用`.scss`扩展名，完全兼容CSS语法
 - 缩进语法（Sass） - 使用`.sass`扩展名，使用缩进代替花括号

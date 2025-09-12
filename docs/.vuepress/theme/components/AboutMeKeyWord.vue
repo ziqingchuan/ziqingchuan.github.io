@@ -92,7 +92,7 @@ const wordData = [
   { text: '教程', value: 1 },
   { text: 'WebSocket', value:2 },
   { text: 'TypeScript', value: 3 },
-  { text: 'SaSS', value: 1 },
+  { text: 'Sass', value: 1 },
 
 ];
 
