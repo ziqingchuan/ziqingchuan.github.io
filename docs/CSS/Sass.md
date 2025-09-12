@@ -4,7 +4,7 @@ createTime: 2025/09/12 10:57:42
 permalink: /article/cswikea1/
 tags:
   - CSS
-  - SaSS
+  - Sass
 excerpt: 详细介绍Sass的相关用法。
 ---
 # Sass 全面指南：现代CSS预处理器的核心概念与实战
