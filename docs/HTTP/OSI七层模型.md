@@ -84,7 +84,7 @@ excerpt: 详细梳理OSI七层模型以及TCP/IP四层模型。
     - <Badge text="ICMP（Internet Control Message Protocol）" type="danger"/>：互联网控制报文协议，用于网络故障诊断（如`ping`命令基于ICMP）；
     - <Badge text="IGP（内部网关协议）" type="danger"/>：用于自治系统（AS）内的路由选择，如RIP、OSPF；
     - <Badge text="EGP（外部网关协议）" type="danger"/>：用于自治系统间的路由选择，如BGP（互联网核心路由协议）。
-
+了解关于IPv4与IPv6?[点击跳转](/HTTP/IPv4与IPv6.md)
 #### 实际应用
 - `ping www.baidu.com`：通过ICMP发送回声请求，检测目标主机是否可达；
 - 路由器的“NAT（网络地址转换）”功能：将内网私有IP转换为外网公有IP，实现多设备共享一个公网IP上网。

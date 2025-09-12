@@ -4,7 +4,7 @@ tags:
   - 简历
 createTime: 2025/06/23 11:01:46
 permalink: /article/20jmp37t/
-sticky: 2
+sticky: 1
 excerpt: 长风破浪会有时，直挂云帆济沧海！
 ---
 ::: demo-wrapper title="我的简历" no-padding height="100%"
