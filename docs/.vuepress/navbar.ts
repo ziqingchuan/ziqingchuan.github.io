@@ -22,6 +22,7 @@ export default defineNavbarConfig([
       {text: "素笔 Mark 编辑器", link: "https://marklite.cn/", icon: "/icons/markdown-editor-logo.svg"},
       {text: "PDF转图片", link: "https://try-catch.life/pdf-to-picture/", icon: "/icons/pdf-logo.svg"},
       {text: "Easy API", link: "https://www.easyapi.top/", icon: "/icons/easy-api.svg"},
+      {text: "慧眼", link: "https://try-catch.life/MyCharts/", icon: "/icons/monitor.svg"},
     ],
   },
   { text: "关于我", link: "/我的简历/MyCV.md", icon: "/icons/blog.svg" },
