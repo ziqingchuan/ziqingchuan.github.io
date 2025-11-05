@@ -244,8 +244,8 @@ span {
         <div class="contact-item"><i>📍</i>现居地：北京</div>
       </div>
       <div class="contact-info">
-        <div class="contact-item"><i>👨‍💻</i>github：github.com/ziqingchuan</div>
-        <div class="contact-item"><i>🌐</i>个人博客：https://www.try-catch.life</div>
+        <div class="contact-item"><i>👨‍💻</i>github：<a href="https://github.com/ziqingchuan" target="_blank" style="cursor: pointer">https://github.com/ziqingchuan</a></div>
+        <div class="contact-item"><i>🌐</i>个人博客：<a href="https://www.try-catch.life" target="_blank" style="cursor: pointer">https://www.try-catch.life</a></div>
       </div>
     </div>
     <img src="/images/myself.png" class="profile-img" alt="个人照片" />
