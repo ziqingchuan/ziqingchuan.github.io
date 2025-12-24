@@ -16,6 +16,7 @@ export default defineNavbarConfig([
     icon: "/icons/blog.svg",
     items: [
       {text: "素笔 Mark 编辑器", link: "https://marklite.cn/", icon: "/icons/markdown-editor-logo.svg"},
+      {text: "React 日记", link: "https://try-catch.life/myReact/", icon: "/icons/react.svg"},
       {text: "DailyUp 日报周报", link: "https://try-catch.life/DailyUp/", icon: "/icons/DailyUp.svg"},
       {text: "QCloud 云盘", link: "https://try-catch.life/QCloud/", icon: "/icons/cloud.svg"},
       {text: "AI 伴学平台", link: "https://try-catch.life/AI-partner/", icon: "/icons/ai-partner.svg"},
